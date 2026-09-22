@@ -33,14 +33,15 @@
         .topo {
             position: relative;
 
-            background-color: #171411;
-            background-image: url("https://amandiocampos54-lgtm.github.io/Yamore/imagens/fundo.jpg");
-
-            /* Repete a imagem em mosaico */
-            background-repeat: repeat;
-
-            /* Não deixa a imagem ocupar o banner inteiro */
-            background-size: 180px 180px;
+            /*
+             * Fundo uniforme da mesma tonalidade
+             * do logo.
+             *
+             * A imagem fundo.jpg é usada como
+             * textura de referência, mas não é
+             * ampliada nem repetida.
+             */
+            background: #171411;
 
             padding: 28px 20px 24px;
 
@@ -49,22 +50,6 @@
             border-bottom: 4px solid #b58a45;
 
             overflow: hidden;
-        }
-
-        /* Camada escura sobre o padrão */
-        .topo::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-
-            background: rgba(23, 20, 17, 0.55);
-
-            z-index: 0;
-        }
-
-        .topo > * {
-            position: relative;
-            z-index: 1;
         }
 
         .logo {
@@ -99,11 +84,12 @@
 
             z-index: 100;
 
-            background: rgba(23, 20, 17, 0.97);
+            background: rgba(23, 20, 17, 0.98);
 
             border-bottom: 1px solid #3a332c;
 
             overflow-x: auto;
+
             white-space: nowrap;
 
             scrollbar-width: none;
@@ -130,11 +116,12 @@
 
             text-decoration: none;
 
-            padding: 9px 15px;
+            padding: 9px 18px;
 
             border-radius: 20px;
 
             font-size: 13px;
+
             font-weight: bold;
 
             transition: 0.2s;
@@ -142,6 +129,7 @@
 
         .categorias a:hover {
             background: #b58a45;
+
             color: white;
         }
 
@@ -182,7 +170,7 @@
 
 
         /* =========================
-           CATEGORIA
+           CATEGORIAS DO MENU
         ========================= */
 
         .categoria {
@@ -379,8 +367,6 @@
 
             .topo {
                 padding: 20px 15px 18px;
-
-                background-size: 120px 120px;
             }
 
             .logo {
@@ -402,7 +388,7 @@
             .categorias a {
                 font-size: 12px;
 
-                padding: 8px 12px;
+                padding: 8px 13px;
             }
 
             .menu {
@@ -474,23 +460,23 @@
 
 
     <!-- =========================
-         MENU DE CATEGORIAS
+         CATEGORIAS
     ========================== -->
 
     <nav class="categorias">
 
         <div class="categorias-inner">
 
-            <a href="#carnes">
-                Carnes
-            </a>
-
-            <a href="#portugueses">
-                Portugueses
+            <a href="#carne">
+                Carne
             </a>
 
             <a href="#peixe">
                 Peixe & Marisco
+            </a>
+
+            <a href="#cervejaria">
+                Cervejaria
             </a>
 
             <a href="#sobremesas">
@@ -522,18 +508,18 @@
 
 
         <!-- =========================
-             CARNES
+             CARNE
         ========================== -->
 
         <section
-            id="carnes"
+            id="carne"
             class="categoria"
         >
 
             <div class="titulo-categoria">
 
                 <h2>
-                    Carnes & Grelhados
+                    Carne
                 </h2>
 
             </div>
@@ -626,88 +612,7 @@
 
 
         <!-- =========================
-             PRATOS PORTUGUESES
-        ========================== -->
-
-        <section
-            id="portugueses"
-            class="categoria"
-        >
-
-            <div class="titulo-categoria">
-
-                <h2>
-                    Pratos Portugueses
-                </h2>
-
-            </div>
-
-
-            <article class="prato destaque">
-
-                <div class="prato-topo">
-
-                    <h3>
-                        Francesinha
-                    </h3>
-
-                    <span class="linha"></span>
-
-                    <span class="preco">
-                        CHF
-                    </span>
-
-                </div>
-
-                <span class="etiqueta">
-                    ESPECIALIDADE
-                </span>
-
-            </article>
-
-
-            <article class="prato">
-
-                <div class="prato-topo">
-
-                    <h3>
-                        Bacalhau à Gordo
-                    </h3>
-
-                    <span class="linha"></span>
-
-                    <span class="preco">
-                        CHF
-                    </span>
-
-                </div>
-
-            </article>
-
-
-            <article class="prato">
-
-                <div class="prato-topo">
-
-                    <h3>
-                        Bacalhau com natas
-                    </h3>
-
-                    <span class="linha"></span>
-
-                    <span class="preco">
-                        CHF
-                    </span>
-
-                </div>
-
-            </article>
-
-        </section>
-
-
-        <!-- =========================
-             PEIXE E MARISCO
+             PEIXE & MARISCO
         ========================== -->
 
         <section
@@ -826,6 +731,87 @@
 
 
         <!-- =========================
+             CERVEJARIA
+        ========================== -->
+
+        <section
+            id="cervejaria"
+            class="categoria"
+        >
+
+            <div class="titulo-categoria">
+
+                <h2>
+                    Cervejaria
+                </h2>
+
+            </div>
+
+
+            <article class="prato destaque">
+
+                <div class="prato-topo">
+
+                    <h3>
+                        Francesinha
+                    </h3>
+
+                    <span class="linha"></span>
+
+                    <span class="preco">
+                        CHF
+                    </span>
+
+                </div>
+
+                <span class="etiqueta">
+                    ESPECIALIDADE
+                </span>
+
+            </article>
+
+
+            <article class="prato">
+
+                <div class="prato-topo">
+
+                    <h3>
+                        Bacalhau à Gordo
+                    </h3>
+
+                    <span class="linha"></span>
+
+                    <span class="preco">
+                        CHF
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <article class="prato">
+
+                <div class="prato-topo">
+
+                    <h3>
+                        Bacalhau com natas
+                    </h3>
+
+                    <span class="linha"></span>
+
+                    <span class="preco">
+                        CHF
+                    </span>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =========================
              SOBREMESAS
         ========================== -->
 
@@ -933,9 +919,7 @@
             📞 +41 78 255 63 20
         </a>
 
-        <p
-            style="margin-top:20px; color:#777;"
-        >
+        <p style="margin-top:20px; color:#777;">
             © 2026 Yamore Grill
         </p>
 
