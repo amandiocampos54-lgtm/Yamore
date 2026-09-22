@@ -26,41 +26,86 @@
             line-height: 1.5;
         }
 
-        /* TOPO */
+        /* =========================
+           TOPO / BANNER
+        ========================= */
 
         .topo {
-            background: #171411;
+            position: relative;
+
+            background-color: #171411;
+            background-image: url("https://amandiocampos54-lgtm.github.io/Yamore/imagens/fundo.jpg");
+
+            /* Repete a imagem em mosaico */
+            background-repeat: repeat;
+
+            /* Não deixa a imagem ocupar o banner inteiro */
+            background-size: 180px 180px;
+
             padding: 28px 20px 24px;
+
             text-align: center;
+
             border-bottom: 4px solid #b58a45;
+
+            overflow: hidden;
+        }
+
+        /* Camada escura sobre o padrão */
+        .topo::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background: rgba(23, 20, 17, 0.55);
+
+            z-index: 0;
+        }
+
+        .topo > * {
+            position: relative;
+            z-index: 1;
         }
 
         .logo {
             display: block;
+
             width: min(360px, 85vw);
             max-height: 180px;
+
             object-fit: contain;
+
             margin: 0 auto;
         }
 
         .subtitulo {
             color: #d8c29a;
+
             font-size: 13px;
             letter-spacing: 3px;
             text-transform: uppercase;
+
             margin-top: 12px;
         }
 
-        /* CATEGORIAS */
+
+        /* =========================
+           CATEGORIAS
+        ========================= */
 
         .categorias {
             position: sticky;
             top: 0;
+
             z-index: 100;
+
             background: rgba(23, 20, 17, 0.97);
+
             border-bottom: 1px solid #3a332c;
+
             overflow-x: auto;
             white-space: nowrap;
+
             scrollbar-width: none;
         }
 
@@ -70,19 +115,28 @@
 
         .categorias-inner {
             display: flex;
+
             justify-content: center;
+
             gap: 6px;
+
             padding: 10px 12px;
+
             min-width: max-content;
         }
 
         .categorias a {
             color: #eee5d8;
+
             text-decoration: none;
+
             padding: 9px 15px;
+
             border-radius: 20px;
+
             font-size: 13px;
             font-weight: bold;
+
             transition: 0.2s;
         }
 
@@ -91,110 +145,155 @@
             color: white;
         }
 
-        /* MENU */
+
+        /* =========================
+           MENU
+        ========================= */
 
         .menu {
             width: min(900px, 94%);
+
             margin: 0 auto;
+
             padding: 35px 0 50px;
         }
 
         .introducao {
             text-align: center;
+
             margin-bottom: 35px;
         }
 
         .introducao h1 {
             font-family: Georgia, serif;
+
             font-size: clamp(30px, 7vw, 46px);
+
             color: #171411;
+
             margin-bottom: 8px;
         }
 
         .introducao p {
             color: #756d63;
+
             font-size: 15px;
         }
 
-        /* CATEGORIA */
+
+        /* =========================
+           CATEGORIA
+        ========================= */
 
         .categoria {
             margin-bottom: 42px;
+
             scroll-margin-top: 70px;
         }
 
         .titulo-categoria {
             display: flex;
+
             align-items: center;
+
             gap: 15px;
+
             margin-bottom: 17px;
         }
 
         .titulo-categoria::before,
         .titulo-categoria::after {
             content: "";
+
             height: 1px;
+
             background: #c9b38c;
+
             flex: 1;
         }
 
         .titulo-categoria h2 {
             font-family: Georgia, serif;
+
             color: #8b642b;
+
             font-size: 25px;
+
             text-align: center;
+
             white-space: nowrap;
         }
 
-        /* PRATOS */
+
+        /* =========================
+           PRATOS
+        ========================= */
 
         .prato {
             background: #fffdf9;
+
             border-radius: 10px;
+
             padding: 17px 18px;
+
             margin-bottom: 10px;
+
             border: 1px solid #e5ddd1;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         .prato-topo {
             display: flex;
+
             align-items: baseline;
+
             gap: 12px;
         }
 
         .prato h3 {
             font-size: 17px;
+
             color: #27211b;
+
             font-weight: 700;
         }
 
         .linha {
             flex: 1;
+
             border-bottom: 1px dotted #bdb3a7;
+
             min-width: 20px;
+
             position: relative;
+
             top: -4px;
         }
 
         .preco {
             font-size: 17px;
+
             font-weight: bold;
+
             color: #8b642b;
+
             white-space: nowrap;
         }
 
         .descricao {
             color: #766f67;
+
             font-size: 13px;
+
             margin-top: 5px;
+
             padding-right: 50px;
         }
 
-        /* DESTAQUES */
-
         .destaque {
             border: 1px solid #b58a45;
+
             background: linear-gradient(
                 135deg,
                 #fffdf8,
@@ -204,63 +303,95 @@
 
         .etiqueta {
             display: inline-block;
+
             background: #8b642b;
+
             color: white;
+
             font-size: 10px;
+
             font-weight: bold;
+
             letter-spacing: 1px;
+
             padding: 3px 7px;
+
             border-radius: 4px;
+
             margin-top: 7px;
         }
 
-        /* RODAPÉ */
+
+        /* =========================
+           RODAPÉ
+        ========================= */
 
         footer {
             background: #171411;
+
             color: #d8d0c5;
+
             text-align: center;
+
             padding: 30px 20px;
         }
 
         footer h3 {
             color: white;
+
             font-family: Georgia, serif;
+
             font-size: 23px;
+
             margin-bottom: 12px;
         }
 
         footer p {
             font-size: 13px;
+
             margin: 5px 0;
         }
 
         .telefone {
             display: inline-block;
+
             margin-top: 15px;
+
             background: #b58a45;
+
             color: white;
+
             text-decoration: none;
+
             padding: 11px 20px;
+
             border-radius: 25px;
+
             font-weight: bold;
         }
 
-        /* MOBILE */
+
+        /* =========================
+           TELEMÓVEL
+        ========================= */
 
         @media (max-width: 600px) {
 
             .topo {
                 padding: 20px 15px 18px;
+
+                background-size: 120px 120px;
             }
 
             .logo {
                 width: min(300px, 90vw);
+
                 max-height: 140px;
             }
 
             .subtitulo {
                 font-size: 10px;
+
                 letter-spacing: 2px;
             }
 
@@ -270,11 +401,13 @@
 
             .categorias a {
                 font-size: 12px;
+
                 padding: 8px 12px;
             }
 
             .menu {
                 width: 92%;
+
                 padding-top: 28px;
             }
 
@@ -304,6 +437,7 @@
 
             .descricao {
                 font-size: 12px;
+
                 padding-right: 0;
             }
 
@@ -320,7 +454,9 @@
 
 <body>
 
-    <!-- LOGO -->
+    <!-- =========================
+         TOPO
+    ========================== -->
 
     <header class="topo">
 
@@ -337,29 +473,46 @@
     </header>
 
 
-    <!-- CATEGORIAS -->
+    <!-- =========================
+         MENU DE CATEGORIAS
+    ========================== -->
 
     <nav class="categorias">
 
         <div class="categorias-inner">
 
-            <a href="#carnes">Carnes</a>
-            <a href="#portugueses">Portugueses</a>
-            <a href="#peixe">Peixe & Marisco</a>
-            <a href="#sobremesas">Sobremesas</a>
+            <a href="#carnes">
+                Carnes
+            </a>
+
+            <a href="#portugueses">
+                Portugueses
+            </a>
+
+            <a href="#peixe">
+                Peixe & Marisco
+            </a>
+
+            <a href="#sobremesas">
+                Sobremesas
+            </a>
 
         </div>
 
     </nav>
 
 
-    <!-- MENU -->
+    <!-- =========================
+         MENU
+    ========================== -->
 
     <main class="menu">
 
         <div class="introducao">
 
-            <h1>O nosso menu</h1>
+            <h1>
+                O nosso menu
+            </h1>
 
             <p>
                 Sabores portugueses preparados com tradição.
@@ -372,10 +525,17 @@
              CARNES
         ========================== -->
 
-        <section id="carnes" class="categoria">
+        <section
+            id="carnes"
+            class="categoria"
+        >
 
             <div class="titulo-categoria">
-                <h2>Carnes & Grelhados</h2>
+
+                <h2>
+                    Carnes & Grelhados
+                </h2>
+
             </div>
 
 
@@ -383,11 +543,15 @@
 
                 <div class="prato-topo">
 
-                    <h3>Picanha</h3>
+                    <h3>
+                        Picanha
+                    </h3>
 
                     <span class="linha"></span>
 
-                    <span class="preco">CHF</span>
+                    <span class="preco">
+                        CHF
+                    </span>
 
                 </div>
 
@@ -402,11 +566,15 @@
 
                 <div class="prato-topo">
 
-                    <h3>Churrasco de boi</h3>
+                    <h3>
+                        Churrasco de boi
+                    </h3>
 
                     <span class="linha"></span>
 
-                    <span class="preco">CHF</span>
+                    <span class="preco">
+                        CHF
+                    </span>
 
                 </div>
 
@@ -417,11 +585,15 @@
 
                 <div class="prato-topo">
 
-                    <h3>Tomahawk Steak</h3>
+                    <h3>
+                        Tomahawk Steak
+                    </h3>
 
                     <span class="linha"></span>
 
-                    <span class="preco">CHF</span>
+                    <span class="preco">
+                        CHF
+                    </span>
 
                 </div>
 
@@ -436,11 +608,15 @@
 
                 <div class="prato-topo">
 
-                    <h3>Grelhada mista</h3>
+                    <h3>
+                        Grelhada mista
+                    </h3>
 
                     <span class="linha"></span>
 
-                    <span class="preco">CHF</span>
+                    <span class="preco">
+                        CHF
+                    </span>
 
                 </div>
 
@@ -453,11 +629,16 @@
              PRATOS PORTUGUESES
         ========================== -->
 
-        <section id="portugueses" class="categoria">
+        <section
+            id="portugueses"
+            class="categoria"
+        >
 
             <div class="titulo-categoria">
 
-                <h2>Pratos Portugueses</h2>
+                <h2>
+                    Pratos Portugueses
+                </h2>
 
             </div>
 
@@ -466,11 +647,15 @@
 
                 <div class="prato-topo">
 
-                    <h3>Francesinha</h3>
+                    <h3>
+                        Francesinha
+                    </h3>
 
                     <span class="linha"></span>
 
-                    <span class="preco">CHF</span>
+                    <span class="preco">
+                        CHF
+                    </span>
 
                 </div>
 
@@ -485,11 +670,15 @@
 
                 <div class="prato-topo">
 
-                    <h3>Bacalhau à Gordo</h3>
+                    <h3>
+                        Bacalhau à Gordo
+                    </h3>
 
                     <span class="linha"></span>
 
-                    <span class="preco">CHF</span>
+                    <span class="preco">
+                        CHF
+                    </span>
 
                 </div>
 
@@ -500,11 +689,15 @@
 
                 <div class="prato-topo">
 
-                    <h3>Bacalhau com natas</h3>
+                    <h3>
+                        Bacalhau com natas
+                    </h3>
 
                     <span class="linha"></span>
 
-                    <span class="preco">CHF</span>
+                    <span class="preco">
+                        CHF
+                    </span>
 
                 </div>
 
@@ -517,11 +710,16 @@
              PEIXE E MARISCO
         ========================== -->
 
-        <section id="peixe" class="categoria">
+        <section
+            id="peixe"
+            class="categoria"
+        >
 
             <div class="titulo-categoria">
 
-                <h2>Peixe & Marisco</h2>
+                <h2>
+                    Peixe & Marisco
+                </h2>
 
             </div>
 
@@ -530,11 +728,15 @@
 
                 <div class="prato-topo">
 
-                    <h3>Gambas</h3>
+                    <h3>
+                        Gambas
+                    </h3>
 
                     <span class="linha"></span>
 
-                    <span class="preco">CHF</span>
+                    <span class="preco">
+                        CHF
+                    </span>
 
                 </div>
 
@@ -545,11 +747,15 @@
 
                 <div class="prato-topo">
 
-                    <h3>Salmão</h3>
+                    <h3>
+                        Salmão
+                    </h3>
 
                     <span class="linha"></span>
 
-                    <span class="preco">CHF</span>
+                    <span class="preco">
+                        CHF
+                    </span>
 
                 </div>
 
@@ -560,11 +766,15 @@
 
                 <div class="prato-topo">
 
-                    <h3>Robalo</h3>
+                    <h3>
+                        Robalo
+                    </h3>
 
                     <span class="linha"></span>
 
-                    <span class="preco">CHF</span>
+                    <span class="preco">
+                        CHF
+                    </span>
 
                 </div>
 
@@ -575,11 +785,15 @@
 
                 <div class="prato-topo">
 
-                    <h3>Chocos grelhados</h3>
+                    <h3>
+                        Chocos grelhados
+                    </h3>
 
                     <span class="linha"></span>
 
-                    <span class="preco">CHF</span>
+                    <span class="preco">
+                        CHF
+                    </span>
 
                 </div>
 
@@ -590,11 +804,15 @@
 
                 <div class="prato-topo">
 
-                    <h3>Polvo</h3>
+                    <h3>
+                        Polvo
+                    </h3>
 
                     <span class="linha"></span>
 
-                    <span class="preco">CHF</span>
+                    <span class="preco">
+                        CHF
+                    </span>
 
                 </div>
 
@@ -611,11 +829,16 @@
              SOBREMESAS
         ========================== -->
 
-        <section id="sobremesas" class="categoria">
+        <section
+            id="sobremesas"
+            class="categoria"
+        >
 
             <div class="titulo-categoria">
 
-                <h2>Sobremesas</h2>
+                <h2>
+                    Sobremesas
+                </h2>
 
             </div>
 
@@ -624,11 +847,15 @@
 
                 <div class="prato-topo">
 
-                    <h3>Pudim</h3>
+                    <h3>
+                        Pudim
+                    </h3>
 
                     <span class="linha"></span>
 
-                    <span class="preco">CHF</span>
+                    <span class="preco">
+                        CHF
+                    </span>
 
                 </div>
 
@@ -639,11 +866,15 @@
 
                 <div class="prato-topo">
 
-                    <h3>Bolo de bolacha</h3>
+                    <h3>
+                        Bolo de bolacha
+                    </h3>
 
                     <span class="linha"></span>
 
-                    <span class="preco">CHF</span>
+                    <span class="preco">
+                        CHF
+                    </span>
 
                 </div>
 
@@ -654,11 +885,15 @@
 
                 <div class="prato-topo">
 
-                    <h3>Mousse de chocolate</h3>
+                    <h3>
+                        Mousse de chocolate
+                    </h3>
 
                     <span class="linha"></span>
 
-                    <span class="preco">CHF</span>
+                    <span class="preco">
+                        CHF
+                    </span>
 
                 </div>
 
@@ -669,19 +904,27 @@
     </main>
 
 
-    <!-- RODAPÉ -->
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
 
     <footer>
 
-        <h3>Yamore Grill</h3>
+        <h3>
+            Yamore Grill
+        </h3>
 
-        <p>Restaurante Português</p>
+        <p>
+            Restaurante Português
+        </p>
 
         <p>
             Neumarkstrasse 52 · 2503 Biel/Bienne
         </p>
 
-        <p>Suíça</p>
+        <p>
+            Suíça
+        </p>
 
         <a
             href="tel:+41782556320"
@@ -690,7 +933,9 @@
             📞 +41 78 255 63 20
         </a>
 
-        <p style="margin-top:20px; color:#777;">
+        <p
+            style="margin-top:20px; color:#777;"
+        >
             © 2026 Yamore Grill
         </p>
 
