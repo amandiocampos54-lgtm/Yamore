@@ -9,6 +9,7 @@
     <title>Yamore Grill | Menu</title>
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -26,22 +27,29 @@
             line-height: 1.5;
         }
 
-        /* =========================
+
+        /* =========================================
            TOPO / BANNER
-        ========================= */
+           ========================================= */
 
         .topo {
             position: relative;
 
             /*
-             * Fundo uniforme da mesma tonalidade
-             * do logo.
-             *
-             * A imagem fundo.jpg é usada como
-             * textura de referência, mas não é
-             * ampliada nem repetida.
+             * A imagem é repetida em mosaico.
+             * Não é esticada nem recebe filtros.
+             * Mantém exactamente as cores originais.
              */
-            background: #171411;
+            background-image: url("https://amandiocampos54-lgtm.github.io/Yamore/imagens/fundo.jpg");
+
+            background-repeat: repeat;
+
+            /*
+             * Tamanho de cada repetição.
+             * Ajusta este valor se quiseres o padrão
+             * maior ou mais pequeno.
+             */
+            background-size: 180px 180px;
 
             padding: 28px 20px 24px;
 
@@ -52,10 +60,12 @@
             overflow: hidden;
         }
 
+
         .logo {
             display: block;
 
             width: min(360px, 85vw);
+
             max-height: 180px;
 
             object-fit: contain;
@@ -63,23 +73,27 @@
             margin: 0 auto;
         }
 
+
         .subtitulo {
             color: #d8c29a;
 
             font-size: 13px;
+
             letter-spacing: 3px;
+
             text-transform: uppercase;
 
             margin-top: 12px;
         }
 
 
-        /* =========================
+        /* =========================================
            CATEGORIAS
-        ========================= */
+           ========================================= */
 
         .categorias {
             position: sticky;
+
             top: 0;
 
             z-index: 100;
@@ -95,9 +109,11 @@
             scrollbar-width: none;
         }
 
+
         .categorias::-webkit-scrollbar {
             display: none;
         }
+
 
         .categorias-inner {
             display: flex;
@@ -110,6 +126,7 @@
 
             min-width: max-content;
         }
+
 
         .categorias a {
             color: #eee5d8;
@@ -127,6 +144,7 @@
             transition: 0.2s;
         }
 
+
         .categorias a:hover {
             background: #b58a45;
 
@@ -134,9 +152,9 @@
         }
 
 
-        /* =========================
+        /* =========================================
            MENU
-        ========================= */
+           ========================================= */
 
         .menu {
             width: min(900px, 94%);
@@ -146,11 +164,13 @@
             padding: 35px 0 50px;
         }
 
+
         .introducao {
             text-align: center;
 
             margin-bottom: 35px;
         }
+
 
         .introducao h1 {
             font-family: Georgia, serif;
@@ -162,6 +182,7 @@
             margin-bottom: 8px;
         }
 
+
         .introducao p {
             color: #756d63;
 
@@ -169,15 +190,16 @@
         }
 
 
-        /* =========================
+        /* =========================================
            CATEGORIAS DO MENU
-        ========================= */
+           ========================================= */
 
         .categoria {
             margin-bottom: 42px;
 
             scroll-margin-top: 70px;
         }
+
 
         .titulo-categoria {
             display: flex;
@@ -189,6 +211,7 @@
             margin-bottom: 17px;
         }
 
+
         .titulo-categoria::before,
         .titulo-categoria::after {
             content: "";
@@ -199,6 +222,7 @@
 
             flex: 1;
         }
+
 
         .titulo-categoria h2 {
             font-family: Georgia, serif;
@@ -213,9 +237,9 @@
         }
 
 
-        /* =========================
+        /* =========================================
            PRATOS
-        ========================= */
+           ========================================= */
 
         .prato {
             background: #fffdf9;
@@ -231,6 +255,7 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
+
         .prato-topo {
             display: flex;
 
@@ -239,6 +264,7 @@
             gap: 12px;
         }
 
+
         .prato h3 {
             font-size: 17px;
 
@@ -246,6 +272,7 @@
 
             font-weight: 700;
         }
+
 
         .linha {
             flex: 1;
@@ -259,6 +286,7 @@
             top: -4px;
         }
 
+
         .preco {
             font-size: 17px;
 
@@ -268,6 +296,7 @@
 
             white-space: nowrap;
         }
+
 
         .descricao {
             color: #766f67;
@@ -279,6 +308,7 @@
             padding-right: 50px;
         }
 
+
         .destaque {
             border: 1px solid #b58a45;
 
@@ -288,6 +318,7 @@
                 #f4ead7
             );
         }
+
 
         .etiqueta {
             display: inline-block;
@@ -310,9 +341,9 @@
         }
 
 
-        /* =========================
+        /* =========================================
            RODAPÉ
-        ========================= */
+           ========================================= */
 
         footer {
             background: #171411;
@@ -324,6 +355,7 @@
             padding: 30px 20px;
         }
 
+
         footer h3 {
             color: white;
 
@@ -334,11 +366,13 @@
             margin-bottom: 12px;
         }
 
+
         footer p {
             font-size: 13px;
 
             margin: 5px 0;
         }
+
 
         .telefone {
             display: inline-block;
@@ -359,15 +393,22 @@
         }
 
 
-        /* =========================
+        /* =========================================
            TELEMÓVEL
-        ========================= */
+           ========================================= */
 
         @media (max-width: 600px) {
 
             .topo {
                 padding: 20px 15px 18px;
+
+                /*
+                 * No telemóvel o padrão fica
+                 * ligeiramente mais pequeno.
+                 */
+                background-size: 120px 120px;
             }
+
 
             .logo {
                 width: min(300px, 90vw);
@@ -375,15 +416,18 @@
                 max-height: 140px;
             }
 
+
             .subtitulo {
                 font-size: 10px;
 
                 letter-spacing: 2px;
             }
 
+
             .categorias-inner {
                 justify-content: flex-start;
             }
+
 
             .categorias a {
                 font-size: 12px;
@@ -391,35 +435,43 @@
                 padding: 8px 13px;
             }
 
+
             .menu {
                 width: 92%;
 
                 padding-top: 28px;
             }
 
+
             .introducao {
                 margin-bottom: 28px;
             }
+
 
             .introducao h1 {
                 font-size: 32px;
             }
 
+
             .titulo-categoria h2 {
                 font-size: 21px;
             }
+
 
             .prato {
                 padding: 15px;
             }
 
+
             .prato h3 {
                 font-size: 16px;
             }
 
+
             .preco {
                 font-size: 16px;
             }
+
 
             .descricao {
                 font-size: 12px;
@@ -427,22 +479,27 @@
                 padding-right: 0;
             }
 
+
             .linha {
                 display: none;
             }
+
 
             .prato-topo {
                 justify-content: space-between;
             }
         }
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- =========================
+
+    <!-- =========================================
          TOPO
-    ========================== -->
+         ========================================= -->
 
     <header class="topo">
 
@@ -459,9 +516,9 @@
     </header>
 
 
-    <!-- =========================
+    <!-- =========================================
          CATEGORIAS
-    ========================== -->
+         ========================================= -->
 
     <nav class="categorias">
 
@@ -488,11 +545,12 @@
     </nav>
 
 
-    <!-- =========================
+    <!-- =========================================
          MENU
-    ========================== -->
+         ========================================= -->
 
     <main class="menu">
+
 
         <div class="introducao">
 
@@ -507,9 +565,10 @@
         </div>
 
 
-        <!-- =========================
+
+        <!-- =====================================
              CARNE
-        ========================== -->
+             ===================================== -->
 
         <section
             id="carne"
@@ -611,9 +670,10 @@
         </section>
 
 
-        <!-- =========================
+
+        <!-- =====================================
              PEIXE & MARISCO
-        ========================== -->
+             ===================================== -->
 
         <section
             id="peixe"
@@ -627,6 +687,44 @@
                 </h2>
 
             </div>
+
+
+            <article class="prato">
+
+                <div class="prato-topo">
+
+                    <h3>
+                        Bacalhau à Gordo
+                    </h3>
+
+                    <span class="linha"></span>
+
+                    <span class="preco">
+                        CHF
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <article class="prato">
+
+                <div class="prato-topo">
+
+                    <h3>
+                        Bacalhau com natas
+                    </h3>
+
+                    <span class="linha"></span>
+
+                    <span class="preco">
+                        CHF
+                    </span>
+
+                </div>
+
+            </article>
 
 
             <article class="prato">
@@ -730,9 +828,10 @@
         </section>
 
 
-        <!-- =========================
+
+        <!-- =====================================
              CERVEJARIA
-        ========================== -->
+             ===================================== -->
 
         <section
             id="cervejaria"
@@ -770,50 +869,13 @@
 
             </article>
 
-
-            <article class="prato">
-
-                <div class="prato-topo">
-
-                    <h3>
-                        Bacalhau à Gordo
-                    </h3>
-
-                    <span class="linha"></span>
-
-                    <span class="preco">
-                        CHF
-                    </span>
-
-                </div>
-
-            </article>
-
-
-            <article class="prato">
-
-                <div class="prato-topo">
-
-                    <h3>
-                        Bacalhau com natas
-                    </h3>
-
-                    <span class="linha"></span>
-
-                    <span class="preco">
-                        CHF
-                    </span>
-
-                </div>
-
-            </article>
-
         </section>
 
 
-        <!-- =========================
+
+        <!-- =====================================
              SOBREMESAS
-        ========================== -->
+             ===================================== -->
 
         <section
             id="sobremesas"
@@ -890,9 +952,10 @@
     </main>
 
 
-    <!-- =========================
+
+    <!-- =========================================
          RODAPÉ
-    ========================== -->
+         ========================================= -->
 
     <footer>
 
@@ -912,6 +975,7 @@
             Suíça
         </p>
 
+
         <a
             href="tel:+41782556320"
             class="telefone"
@@ -919,11 +983,13 @@
             📞 +41 78 255 63 20
         </a>
 
+
         <p style="margin-top:20px; color:#777;">
             © 2026 Yamore Grill
         </p>
 
     </footer>
+
 
 </body>
 </html>
