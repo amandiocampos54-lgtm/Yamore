@@ -1,927 +1,916 @@
 <!DOCTYPE html>
+
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Menu Yamore Grill - Restaurante Português em Biel/Bienne, Suíça.">
+```
+<meta name="description" content="Menu Yamore Grill - Restaurante Português em Biel/Bienne, Suíça.">
 
-    <title>Yamore Grill | Menu</title>
+<title>Yamore Grill | Menu</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    html {
+        scroll-behavior: smooth;
+    }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f1e8;
-            color: #29241f;
-            line-height: 1.5;
-        }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f5f1e8;
+        color: #29241f;
+        line-height: 1.5;
+    }
 
-        /* =====================================================
-           CABEÇALHO
-           ===================================================== */
+    /* =====================================================
+       CABEÇALHO
+       ===================================================== */
+
+    .topo {
+        position: relative;
+
+        background-image: url("https://amandiocampos54-lgtm.github.io/Yamore/imagens/fundo.jpg");
+        background-repeat: repeat;
+        background-size: 500px 500px;
+        background-position: center top;
+
+        /* Banner mais baixo */
+        padding: 8px 15px 10px;
+
+        text-align: center;
+
+        border-bottom: 4px solid #b58a45;
+
+        overflow: hidden;
+    }
+
+    .logo {
+        display: block;
+
+        width: min(300px, 72vw);
+
+        height: auto;
+
+        margin: 0 auto;
+
+        opacity: 1;
+    }
+
+    .subtitulo {
+        color: #ffffff;
+
+        font-size: 11px;
+
+        letter-spacing: 2px;
+
+        text-transform: uppercase;
+
+        margin-top: 3px;
+
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    }
+
+    /* =====================================================
+       CATEGORIAS
+       ===================================================== */
+
+    .categorias {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+
+        background: rgba(23, 20, 17, 0.98);
+
+        border-bottom: 1px solid #3a332c;
+
+        overflow-x: auto;
+        white-space: nowrap;
+
+        scrollbar-width: none;
+    }
+
+    .categorias::-webkit-scrollbar {
+        display: none;
+    }
+
+    .categorias-inner {
+        display: flex;
+
+        justify-content: center;
+
+        gap: 6px;
+
+        padding: 10px 12px;
+
+        min-width: max-content;
+    }
+
+    .categorias a {
+        color: #eee5d8;
+
+        text-decoration: none;
+
+        padding: 9px 18px;
+
+        border-radius: 20px;
+
+        font-size: 13px;
+
+        font-weight: bold;
+
+        transition: 0.2s;
+    }
+
+    .categorias a:hover {
+        background: #b58a45;
+        color: #ffffff;
+    }
+
+    /* =====================================================
+       MENU
+       ===================================================== */
+
+    .menu {
+        width: min(900px, 94%);
+
+        margin: 0 auto;
+
+        padding: 35px 0 50px;
+    }
+
+    .introducao {
+        text-align: center;
+
+        margin-bottom: 35px;
+    }
+
+    .introducao h1 {
+        font-family: Georgia, serif;
+
+        font-size: clamp(30px, 7vw, 46px);
+
+        color: #171411;
+
+        margin-bottom: 8px;
+    }
+
+    .introducao p {
+        color: #756d63;
+
+        font-size: 15px;
+    }
+
+    /* =====================================================
+       TÍTULOS DAS CATEGORIAS
+       ===================================================== */
+
+    .categoria {
+        margin-bottom: 42px;
+
+        scroll-margin-top: 70px;
+    }
+
+    .titulo-categoria {
+        display: flex;
+
+        align-items: center;
+
+        gap: 15px;
+
+        margin-bottom: 17px;
+    }
+
+    .titulo-categoria::before,
+    .titulo-categoria::after {
+        content: "";
+
+        height: 1px;
+
+        background: #c9b38c;
+
+        flex: 1;
+    }
+
+    .titulo-categoria h2 {
+        font-family: Georgia, serif;
+
+        color: #8b642b;
+
+        font-size: 25px;
+
+        text-align: center;
+
+        white-space: nowrap;
+    }
+
+    /* =====================================================
+       PRATOS
+       ===================================================== */
+
+    .prato {
+        background: #fffdf9;
+
+        border-radius: 10px;
+
+        padding: 17px 18px;
+
+        margin-bottom: 10px;
+
+        border: 1px solid #e5ddd1;
+
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .prato-topo {
+        display: flex;
+
+        align-items: baseline;
+
+        gap: 12px;
+    }
+
+    .prato h3 {
+        font-size: 17px;
+
+        color: #27211b;
+
+        font-weight: 700;
+    }
+
+    .linha {
+        flex: 1;
+
+        border-bottom: 1px dotted #bdb3a7;
+
+        min-width: 20px;
+
+        position: relative;
+
+        top: -4px;
+    }
+
+    .preco {
+        font-size: 17px;
+
+        font-weight: bold;
+
+        color: #8b642b;
+
+        white-space: nowrap;
+    }
+
+    .descricao {
+        color: #766f67;
+
+        font-size: 13px;
+
+        margin-top: 5px;
+
+        padding-right: 50px;
+    }
+
+    .destaque {
+        border: 1px solid #b58a45;
+
+        background: linear-gradient(
+            135deg,
+            #fffdf8,
+            #f4ead7
+        );
+    }
+
+    .etiqueta {
+        display: inline-block;
+
+        background: #8b642b;
+
+        color: white;
+
+        font-size: 10px;
+
+        font-weight: bold;
+
+        letter-spacing: 1px;
+
+        padding: 3px 7px;
+
+        border-radius: 4px;
+
+        margin-top: 7px;
+    }
+
+    /* =====================================================
+       RODAPÉ
+       ===================================================== */
+
+    footer {
+        background: #171411;
+
+        color: #d8d0c5;
+
+        text-align: center;
+
+        padding: 30px 20px;
+    }
+
+    footer h3 {
+        color: white;
+
+        font-family: Georgia, serif;
+
+        font-size: 23px;
+
+        margin-bottom: 12px;
+    }
+
+    footer p {
+        font-size: 13px;
+
+        margin: 5px 0;
+    }
+
+    .telefone {
+        display: inline-block;
+
+        margin-top: 15px;
+
+        background: #b58a45;
+
+        color: white;
+
+        text-decoration: none;
+
+        padding: 11px 20px;
+
+        border-radius: 25px;
+
+        font-weight: bold;
+    }
+
+    /* =====================================================
+       TELEMÓVEL
+       ===================================================== */
+
+    @media (max-width: 600px) {
 
         .topo {
-            position: relative;
+            /* Banner ainda mais compacto no telemóvel */
+            padding: 6px 8px 8px;
 
-            background-image: url("https://amandiocampos54-lgtm.github.io/Yamore/imagens/fundo.jpg");
-            background-repeat: repeat;
-            background-size: 500px 500px;
+            background-size: 360px 360px;
             background-position: center top;
-
-            padding: 20px 15px 22px;
-
-            text-align: center;
-
-            border-bottom: 4px solid #b58a45;
-
-            overflow: hidden;
         }
 
         .logo {
-            display: block;
-
-            width: min(390px, 88vw);
+            width: min(250px, 78vw);
 
             height: auto;
-
-            margin: 0 auto;
-
-            opacity: 1;
         }
 
         .subtitulo {
-            color: #ffffff;
+            font-size: 10px;
 
-            font-size: 13px;
+            letter-spacing: 2px;
 
-            letter-spacing: 3px;
-
-            text-transform: uppercase;
-
-            margin-top: 8px;
-
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-        }
-
-
-        /* =====================================================
-           CATEGORIAS
-           ===================================================== */
-
-        .categorias {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-
-            background: rgba(23, 20, 17, 0.98);
-
-            border-bottom: 1px solid #3a332c;
-
-            overflow-x: auto;
-            white-space: nowrap;
-
-            scrollbar-width: none;
-        }
-
-        .categorias::-webkit-scrollbar {
-            display: none;
+            margin-top: 3px;
         }
 
         .categorias-inner {
-            display: flex;
-
-            justify-content: center;
-
-            gap: 6px;
-
-            padding: 10px 12px;
-
-            min-width: max-content;
+            justify-content: flex-start;
         }
 
         .categorias a {
-            color: #eee5d8;
+            font-size: 12px;
 
-            text-decoration: none;
-
-            padding: 9px 18px;
-
-            border-radius: 20px;
-
-            font-size: 13px;
-
-            font-weight: bold;
-
-            transition: 0.2s;
+            padding: 8px 13px;
         }
-
-        .categorias a:hover {
-            background: #b58a45;
-            color: #ffffff;
-        }
-
-
-        /* =====================================================
-           MENU
-           ===================================================== */
 
         .menu {
-            width: min(900px, 94%);
+            width: 92%;
 
-            margin: 0 auto;
-
-            padding: 35px 0 50px;
+            padding-top: 28px;
         }
 
         .introducao {
-            text-align: center;
-
-            margin-bottom: 35px;
+            margin-bottom: 28px;
         }
 
         .introducao h1 {
-            font-family: Georgia, serif;
-
-            font-size: clamp(30px, 7vw, 46px);
-
-            color: #171411;
-
-            margin-bottom: 8px;
-        }
-
-        .introducao p {
-            color: #756d63;
-
-            font-size: 15px;
-        }
-
-
-        /* =====================================================
-           TÍTULOS DAS CATEGORIAS
-           ===================================================== */
-
-        .categoria {
-            margin-bottom: 42px;
-
-            scroll-margin-top: 70px;
-        }
-
-        .titulo-categoria {
-            display: flex;
-
-            align-items: center;
-
-            gap: 15px;
-
-            margin-bottom: 17px;
-        }
-
-        .titulo-categoria::before,
-        .titulo-categoria::after {
-            content: "";
-
-            height: 1px;
-
-            background: #c9b38c;
-
-            flex: 1;
+            font-size: 32px;
         }
 
         .titulo-categoria h2 {
-            font-family: Georgia, serif;
-
-            color: #8b642b;
-
-            font-size: 25px;
-
-            text-align: center;
-
-            white-space: nowrap;
+            font-size: 21px;
         }
-
-
-        /* =====================================================
-           PRATOS
-           ===================================================== */
 
         .prato {
-            background: #fffdf9;
-
-            border-radius: 10px;
-
-            padding: 17px 18px;
-
-            margin-bottom: 10px;
-
-            border: 1px solid #e5ddd1;
-
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-        }
-
-        .prato-topo {
-            display: flex;
-
-            align-items: baseline;
-
-            gap: 12px;
+            padding: 15px;
         }
 
         .prato h3 {
-            font-size: 17px;
-
-            color: #27211b;
-
-            font-weight: 700;
-        }
-
-        .linha {
-            flex: 1;
-
-            border-bottom: 1px dotted #bdb3a7;
-
-            min-width: 20px;
-
-            position: relative;
-
-            top: -4px;
+            font-size: 16px;
         }
 
         .preco {
-            font-size: 17px;
-
-            font-weight: bold;
-
-            color: #8b642b;
-
-            white-space: nowrap;
+            font-size: 16px;
         }
 
         .descricao {
-            color: #766f67;
+            font-size: 12px;
 
-            font-size: 13px;
-
-            margin-top: 5px;
-
-            padding-right: 50px;
+            padding-right: 0;
         }
 
-        .destaque {
-            border: 1px solid #b58a45;
-
-            background: linear-gradient(
-                135deg,
-                #fffdf8,
-                #f4ead7
-            );
+        .linha {
+            display: none;
         }
 
-        .etiqueta {
-            display: inline-block;
-
-            background: #8b642b;
-
-            color: white;
-
-            font-size: 10px;
-
-            font-weight: bold;
-
-            letter-spacing: 1px;
-
-            padding: 3px 7px;
-
-            border-radius: 4px;
-
-            margin-top: 7px;
+        .prato-topo {
+            justify-content: space-between;
         }
+    }
+</style>
+```
 
-
-        /* =====================================================
-           RODAPÉ
-           ===================================================== */
-
-        footer {
-            background: #171411;
-
-            color: #d8d0c5;
-
-            text-align: center;
-
-            padding: 30px 20px;
-        }
-
-        footer h3 {
-            color: white;
-
-            font-family: Georgia, serif;
-
-            font-size: 23px;
-
-            margin-bottom: 12px;
-        }
-
-        footer p {
-            font-size: 13px;
-
-            margin: 5px 0;
-        }
-
-        .telefone {
-            display: inline-block;
-
-            margin-top: 15px;
-
-            background: #b58a45;
-
-            color: white;
-
-            text-decoration: none;
-
-            padding: 11px 20px;
-
-            border-radius: 25px;
-
-            font-weight: bold;
-        }
-
-
-        /* =====================================================
-           TELEMÓVEL
-           ===================================================== */
-
-        @media (max-width: 600px) {
-
-            .topo {
-                padding: 12px 10px 18px;
-
-                background-size: 360px 360px;
-                background-position: center top;
-            }
-
-            .logo {
-                width: min(330px, 94vw);
-
-                height: auto;
-            }
-
-            .subtitulo {
-                font-size: 10px;
-
-                letter-spacing: 2px;
-
-                margin-top: 5px;
-            }
-
-            .categorias-inner {
-                justify-content: flex-start;
-            }
-
-            .categorias a {
-                font-size: 12px;
-
-                padding: 8px 13px;
-            }
-
-            .menu {
-                width: 92%;
-
-                padding-top: 28px;
-            }
-
-            .introducao {
-                margin-bottom: 28px;
-            }
-
-            .introducao h1 {
-                font-size: 32px;
-            }
-
-            .titulo-categoria h2 {
-                font-size: 21px;
-            }
-
-            .prato {
-                padding: 15px;
-            }
-
-            .prato h3 {
-                font-size: 16px;
-            }
-
-            .preco {
-                font-size: 16px;
-            }
-
-            .descricao {
-                font-size: 12px;
-
-                padding-right: 0;
-            }
-
-            .linha {
-                display: none;
-            }
-
-            .prato-topo {
-                justify-content: space-between;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- =====================================================
-         CABEÇALHO
-         ===================================================== -->
+```
+<!-- =====================================================
+     CABEÇALHO
+     ===================================================== -->
 
-    <header class="topo">
+<header class="topo">
 
-        <img
-            src="https://amandiocampos54-lgtm.github.io/Yamore/imagens/logo.png"
-            alt="Yamore Grill"
-            class="logo"
-        >
+    <img
+        src="https://amandiocampos54-lgtm.github.io/Yamore/imagens/logo.png"
+        alt="Yamore Grill"
+        class="logo"
+    >
 
-        <div class="subtitulo">
-            Restaurante Português · Biel/Bienne
-        </div>
+    <div class="subtitulo">
+        Restaurante Português · Biel/Bienne
+    </div>
 
-    </header>
+</header>
 
 
-    <!-- =====================================================
-         MENU DE CATEGORIAS
-         ===================================================== -->
+<!-- =====================================================
+     MENU DE CATEGORIAS
+     ===================================================== -->
 
-    <nav class="categorias">
+<nav class="categorias">
 
-        <div class="categorias-inner">
+    <div class="categorias-inner">
 
-            <a href="#carne">
-                Carne
-            </a>
-
-            <a href="#peixe">
-                Peixe &amp; Marisco
-            </a>
-
-            <a href="#cervejaria">
-                Cervejaria
-            </a>
-
-            <a href="#sobremesas">
-                Sobremesas
-            </a>
-
-        </div>
-
-    </nav>
-
-
-    <!-- =====================================================
-         CONTEÚDO
-         ===================================================== -->
-
-    <main class="menu">
-
-        <div class="introducao">
-
-            <h1>
-                O nosso menu
-            </h1>
-
-            <p>
-                Sabores portugueses preparados com tradição.
-            </p>
-
-        </div>
-
-
-        <!-- =================================================
-             CARNE
-             ================================================= -->
-
-        <section
-            id="carne"
-            class="categoria"
-        >
-
-            <div class="titulo-categoria">
-
-                <h2>
-                    Carne
-                </h2>
-
-            </div>
-
-
-            <article class="prato destaque">
-
-                <div class="prato-topo">
-
-                    <h3>
-                        Picanha
-                    </h3>
-
-                    <span class="linha"></span>
-
-                    <span class="preco">
-                        CHF
-                    </span>
-
-                </div>
-
-                <span class="etiqueta">
-                    ESPECIALIDADE
-                </span>
-
-            </article>
-
-
-            <article class="prato">
-
-                <div class="prato-topo">
-
-                    <h3>
-                        Churrasco de boi
-                    </h3>
-
-                    <span class="linha"></span>
-
-                    <span class="preco">
-                        CHF
-                    </span>
-
-                </div>
-
-            </article>
-
-
-            <article class="prato destaque">
-
-                <div class="prato-topo">
-
-                    <h3>
-                        Tomahawk Steak
-                    </h3>
-
-                    <span class="linha"></span>
-
-                    <span class="preco">
-                        CHF
-                    </span>
-
-                </div>
-
-                <span class="etiqueta">
-                    ESPECIALIDADE
-                </span>
-
-            </article>
-
-
-            <article class="prato">
-
-                <div class="prato-topo">
-
-                    <h3>
-                        Grelhada mista
-                    </h3>
-
-                    <span class="linha"></span>
-
-                    <span class="preco">
-                        CHF
-                    </span>
-
-                </div>
-
-            </article>
-
-        </section>
-
-
-        <!-- =================================================
-             PEIXE & MARISCO
-             ================================================= -->
-
-        <section
-            id="peixe"
-            class="categoria"
-        >
-
-            <div class="titulo-categoria">
-
-                <h2>
-                    Peixe &amp; Marisco
-                </h2>
-
-            </div>
-
-
-            <article class="prato">
-
-                <div class="prato-topo">
-
-                    <h3>
-                        Bacalhau à Gordo
-                    </h3>
-
-                    <span class="linha"></span>
-
-                    <span class="preco">
-                        CHF
-                    </span>
-
-                </div>
-
-            </article>
-
-
-            <article class="prato">
-
-                <div class="prato-topo">
-
-                    <h3>
-                        Bacalhau com natas
-                    </h3>
-
-                    <span class="linha"></span>
-
-                    <span class="preco">
-                        CHF
-                    </span>
-
-                </div>
-
-            </article>
-
-
-            <article class="prato">
-
-                <div class="prato-topo">
-
-                    <h3>
-                        Gambas
-                    </h3>
-
-                    <span class="linha"></span>
-
-                    <span class="preco">
-                        CHF
-                    </span>
-
-                </div>
-
-            </article>
-
-
-            <article class="prato">
-
-                <div class="prato-topo">
-
-                    <h3>
-                        Salmão
-                    </h3>
-
-                    <span class="linha"></span>
-
-                    <span class="preco">
-                        CHF
-                    </span>
-
-                </div>
-
-            </article>
-
-
-            <article class="prato">
-
-                <div class="prato-topo">
-
-                    <h3>
-                        Robalo
-                    </h3>
-
-                    <span class="linha"></span>
-
-                    <span class="preco">
-                        CHF
-                    </span>
-
-                </div>
-
-            </article>
-
-
-            <article class="prato">
-
-                <div class="prato-topo">
-
-                    <h3>
-                        Chocos grelhados
-                    </h3>
-
-                    <span class="linha"></span>
-
-                    <span class="preco">
-                        CHF
-                    </span>
-
-                </div>
-
-            </article>
-
-
-            <article class="prato destaque">
-
-                <div class="prato-topo">
-
-                    <h3>
-                        Polvo
-                    </h3>
-
-                    <span class="linha"></span>
-
-                    <span class="preco">
-                        CHF
-                    </span>
-
-                </div>
-
-                <span class="etiqueta">
-                    ESPECIALIDADE
-                </span>
-
-            </article>
-
-        </section>
-
-
-        <!-- =================================================
-             CERVEJARIA
-             ================================================= -->
-
-        <section
-            id="cervejaria"
-            class="categoria"
-        >
-
-            <div class="titulo-categoria">
-
-                <h2>
-                    Cervejaria
-                </h2>
-
-            </div>
-
-
-            <article class="prato destaque">
-
-                <div class="prato-topo">
-
-                    <h3>
-                        Francesinha
-                    </h3>
-
-                    <span class="linha"></span>
-
-                    <span class="preco">
-                        CHF
-                    </span>
-
-                </div>
-
-                <span class="etiqueta">
-                    ESPECIALIDADE
-                </span>
-
-            </article>
-
-        </section>
-
-
-        <!-- =================================================
-             SOBREMESAS
-             ================================================= -->
-
-        <section
-            id="sobremesas"
-            class="categoria"
-        >
-
-            <div class="titulo-categoria">
-
-                <h2>
-                    Sobremesas
-                </h2>
-
-            </div>
-
-
-            <article class="prato">
-
-                <div class="prato-topo">
-
-                    <h3>
-                        Pudim
-                    </h3>
-
-                    <span class="linha"></span>
-
-                    <span class="preco">
-                        CHF
-                    </span>
-
-                </div>
-
-            </article>
-
-
-            <article class="prato">
-
-                <div class="prato-topo">
-
-                    <h3>
-                        Bolo de bolacha
-                    </h3>
-
-                    <span class="linha"></span>
-
-                    <span class="preco">
-                        CHF
-                    </span>
-
-                </div>
-
-            </article>
-
-
-            <article class="prato">
-
-                <div class="prato-topo">
-
-                    <h3>
-                        Mousse de chocolate
-                    </h3>
-
-                    <span class="linha"></span>
-
-                    <span class="preco">
-                        CHF
-                    </span>
-
-                </div>
-
-            </article>
-
-        </section>
-
-    </main>
-
-
-    <!-- =====================================================
-         RODAPÉ
-         ===================================================== -->
-
-    <footer>
-
-        <h3>
-            Yamore Grill
-        </h3>
-
-        <p>
-            Neumarkstrasse 52 · 2503 Biel/Bienne
-        </p>
-
-        <p>
-            Suíça
-        </p>
-
-        <a
-            href="tel:+41782556320"
-            class="telefone"
-        >
-            📞 +41 78 255 63 20
+        <a href="#carne">
+            Carne
         </a>
 
-        <p style="margin-top:20px; color:#777;">
-            © 2026 Yamore Grill
+        <a href="#peixe">
+            Peixe &amp; Marisco
+        </a>
+
+        <a href="#cervejaria">
+            Cervejaria
+        </a>
+
+        <a href="#sobremesas">
+            Sobremesas
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     CONTEÚDO
+     ===================================================== -->
+
+<main class="menu">
+
+    <div class="introducao">
+
+        <h1>
+            O nosso menu
+        </h1>
+
+        <p>
+            Sabores portugueses preparados com tradição.
         </p>
 
-    </footer>
+    </div>
+
+
+    <!-- =================================================
+         CARNE
+         ================================================= -->
+
+    <section id="carne" class="categoria">
+
+        <div class="titulo-categoria">
+
+            <h2>
+                Carne
+            </h2>
+
+        </div>
+
+
+        <article class="prato destaque">
+
+            <div class="prato-topo">
+
+                <h3>
+                    Picanha
+                </h3>
+
+                <span class="linha"></span>
+
+                <span class="preco">
+                    CHF
+                </span>
+
+            </div>
+
+            <span class="etiqueta">
+                ESPECIALIDADE
+            </span>
+
+        </article>
+
+
+        <article class="prato">
+
+            <div class="prato-topo">
+
+                <h3>
+                    Churrasco de boi
+                </h3>
+
+                <span class="linha"></span>
+
+                <span class="preco">
+                    CHF
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <article class="prato destaque">
+
+            <div class="prato-topo">
+
+                <h3>
+                    Tomahawk Steak
+                </h3>
+
+                <span class="linha"></span>
+
+                <span class="preco">
+                    CHF
+                </span>
+
+            </div>
+
+            <span class="etiqueta">
+                ESPECIALIDADE
+            </span>
+
+        </article>
+
+
+        <article class="prato">
+
+            <div class="prato-topo">
+
+                <h3>
+                    Grelhada mista
+                </h3>
+
+                <span class="linha"></span>
+
+                <span class="preco">
+                    CHF
+                </span>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- =================================================
+         PEIXE & MARISCO
+         ================================================= -->
+
+    <section id="peixe" class="categoria">
+
+        <div class="titulo-categoria">
+
+            <h2>
+                Peixe &amp; Marisco
+            </h2>
+
+        </div>
+
+
+        <article class="prato">
+
+            <div class="prato-topo">
+
+                <h3>
+                    Bacalhau à Gordo
+                </h3>
+
+                <span class="linha"></span>
+
+                <span class="preco">
+                    CHF
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <article class="prato">
+
+            <div class="prato-topo">
+
+                <h3>
+                    Bacalhau com natas
+                </h3>
+
+                <span class="linha"></span>
+
+                <span class="preco">
+                    CHF
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <article class="prato">
+
+            <div class="prato-topo">
+
+                <h3>
+                    Gambas
+                </h3>
+
+                <span class="linha"></span>
+
+                <span class="preco">
+                    CHF
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <article class="prato">
+
+            <div class="prato-topo">
+
+                <h3>
+                    Salmão
+                </h3>
+
+                <span class="linha"></span>
+
+                <span class="preco">
+                    CHF
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <article class="prato">
+
+            <div class="prato-topo">
+
+                <h3>
+                    Robalo
+                </h3>
+
+                <span class="linha"></span>
+
+                <span class="preco">
+                    CHF
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <article class="prato">
+
+            <div class="prato-topo">
+
+                <h3>
+                    Chocos grelhados
+                </h3>
+
+                <span class="linha"></span>
+
+                <span class="preco">
+                    CHF
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <article class="prato destaque">
+
+            <div class="prato-topo">
+
+                <h3>
+                    Polvo
+                </h3>
+
+                <span class="linha"></span>
+
+                <span class="preco">
+                    CHF
+                </span>
+
+            </div>
+
+            <span class="etiqueta">
+                ESPECIALIDADE
+            </span>
+
+        </article>
+
+    </section>
+
+
+    <!-- =================================================
+         CERVEJARIA
+         ================================================= -->
+
+    <section id="cervejaria" class="categoria">
+
+        <div class="titulo-categoria">
+
+            <h2>
+                Cervejaria
+            </h2>
+
+        </div>
+
+
+        <article class="prato destaque">
+
+            <div class="prato-topo">
+
+                <h3>
+                    Francesinha
+                </h3>
+
+                <span class="linha"></span>
+
+                <span class="preco">
+                    CHF
+                </span>
+
+            </div>
+
+            <span class="etiqueta">
+                ESPECIALIDADE
+            </span>
+
+        </article>
+
+    </section>
+
+
+    <!-- =================================================
+         SOBREMESAS
+         ================================================= -->
+
+    <section id="sobremesas" class="categoria">
+
+        <div class="titulo-categoria">
+
+            <h2>
+                Sobremesas
+            </h2>
+
+        </div>
+
+
+        <article class="prato">
+
+            <div class="prato-topo">
+
+                <h3>
+                    Pudim
+                </h3>
+
+                <span class="linha"></span>
+
+                <span class="preco">
+                    CHF
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <article class="prato">
+
+            <div class="prato-topo">
+
+                <h3>
+                    Bolo de bolacha
+                </h3>
+
+                <span class="linha"></span>
+
+                <span class="preco">
+                    CHF
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <article class="prato">
+
+            <div class="prato-topo">
+
+                <h3>
+                    Mousse de chocolate
+                </h3>
+
+                <span class="linha"></span>
+
+                <span class="preco">
+                    CHF
+                </span>
+
+            </div>
+
+        </article>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     RODAPÉ
+     ===================================================== -->
+
+<footer>
+
+    <h3>
+        Yamore Grill
+    </h3>
+
+    <p>
+        Neumarkstrasse 52 · 2503 Biel/Bienne
+    </p>
+
+    <p>
+        Suíça
+    </p>
+
+    <a
+        href="tel:+41782556320"
+        class="telefone"
+    >
+        📞 +41 78 255 63 20
+    </a>
+
+    <p style="margin-top:20px; color:#777;">
+        © 2026 Yamore Grill
+    </p>
+
+</footer>
 
 </body>
 </html>
