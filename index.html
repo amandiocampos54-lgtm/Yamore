@@ -1,461 +1,303 @@
-<!DOCTYPE html><html lang="pt">
+<!DOCTYPE html>
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Menu Yamore Grill - Restaurante Português em Biel/Bienne, Suíça.">
-
-<title>Yamore Grill | Menu</title>
-
-<style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #f5f1e8;
-        color: #29241f;
-        line-height: 1.5;
-    }
-
-    /* =====================================================
-       CABEÇALHO
-       ===================================================== */
-
-    .topo {
-        position: relative;
-
-        background-image: url("https://amandiocampos54-lgtm.github.io/Yamore/imagens/fundo.jpg");
-        background-repeat: repeat;
-        background-size: 500px 500px;
-        background-position: center top;
-
-        padding: 8px 15px 10px;
-
-        text-align: center;
-
-        border-bottom: 4px solid #b58a45;
-
-        overflow: hidden;
-    }
-
-    .logo {
-        display: block;
-
-        width: min(300px, 72vw);
-
-        height: auto;
-
-        margin: 0 auto;
-
-        opacity: 1;
-    }
-
-    .subtitulo {
-        color: #ffffff;
-
-        font-size: 11px;
-
-        letter-spacing: 2px;
-
-        text-transform: uppercase;
-
-        margin-top: 3px;
-
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-    }
-
-    /* =====================================================
-       CATEGORIAS
-       ===================================================== */
-
-    .categorias {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-
-        background: rgba(23, 20, 17, 0.98);
-
-        border-bottom: 1px solid #3a332c;
-
-        overflow-x: auto;
-        white-space: nowrap;
-
-        scrollbar-width: none;
-    }
-
-    .categorias::-webkit-scrollbar {
-        display: none;
-    }
-
-    .categorias-inner {
-        display: flex;
-
-        justify-content: center;
-
-        gap: 6px;
-
-        padding: 10px 12px;
-
-        min-width: max-content;
-    }
-
-    .categorias a {
-        color: #eee5d8;
-
-        text-decoration: none;
-
-        padding: 9px 16px;
-
-        border-radius: 20px;
-
-        font-size: 13px;
-
-        font-weight: bold;
-
-        transition: 0.2s;
-    }
-
-    .categorias a:hover {
-        background: #b58a45;
-        color: #ffffff;
-    }
-
-    /* =====================================================
-       MENU
-       ===================================================== */
-
-    .menu {
-        width: min(900px, 94%);
-
-        margin: 0 auto;
-
-        padding: 35px 0 50px;
-    }
-
-    .introducao {
-        text-align: center;
-
-        margin-bottom: 35px;
-    }
-
-    .introducao h1 {
-        font-family: Georgia, serif;
-
-        font-size: clamp(30px, 7vw, 46px);
-
-        color: #171411;
-
-        margin-bottom: 8px;
-    }
-
-    .introducao p {
-        color: #756d63;
-
-        font-size: 15px;
-    }
-
-    /* =====================================================
-       TÍTULOS DAS CATEGORIAS
-       ===================================================== */
-
-    .categoria {
-        margin-bottom: 42px;
-
-        scroll-margin-top: 70px;
-    }
-
-    .titulo-categoria {
-        display: flex;
-
-        align-items: center;
-
-        gap: 15px;
-
-        margin-bottom: 17px;
-    }
-
-    .titulo-categoria::before,
-    .titulo-categoria::after {
-        content: "";
-
-        height: 1px;
-
-        background: #c9b38c;
-
-        flex: 1;
-    }
-
-    .titulo-categoria h2 {
-        font-family: Georgia, serif;
-
-        color: #8b642b;
-
-        font-size: 25px;
-
-        text-align: center;
-
-        white-space: nowrap;
-    }
-
-    /* =====================================================
-       SUBCATEGORIAS
-       ===================================================== */
-
-    .subcategoria {
-        font-family: Georgia, serif;
-
-        color: #6f5228;
-
-        font-size: 18px;
-
-        margin: 24px 0 12px;
-
-        padding-bottom: 5px;
-
-        border-bottom: 1px solid #d8c6a7;
-    }
-
-    /* =====================================================
-       PRATOS
-       ===================================================== */
-
-    .prato {
-        background: #fffdf9;
-
-        border-radius: 10px;
-
-        padding: 17px 18px;
-
-        margin-bottom: 10px;
-
-        border: 1px solid #e5ddd1;
-
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    }
-
-    .prato-topo {
-        display: flex;
-
-        align-items: baseline;
-
-        gap: 12px;
-    }
-
-    .prato h3 {
-        font-size: 17px;
-
-        color: #27211b;
-
-        font-weight: 700;
-    }
-
-    .linha {
-        flex: 1;
-
-        border-bottom: 1px dotted #bdb3a7;
-
-        min-width: 20px;
-
-        position: relative;
-
-        top: -4px;
-    }
-
-    .preco {
-        font-size: 17px;
-
-        font-weight: bold;
-
-        color: #8b642b;
-
-        white-space: nowrap;
-    }
-
-    .descricao {
-        color: #766f67;
-
-        font-size: 13px;
-
-        margin-top: 5px;
-    }
-
-    .destaque {
-        border: 1px solid #b58a45;
-
-        background: linear-gradient(
-            135deg,
-            #fffdf8,
-            #f4ead7
-        );
-    }
-
-    .etiqueta {
-        display: inline-block;
-
-        background: #8b642b;
-
-        color: white;
-
-        font-size: 10px;
-
-        font-weight: bold;
-
-        letter-spacing: 1px;
-
-        padding: 3px 7px;
-
-        border-radius: 4px;
-
-        margin-top: 7px;
-    }
-
-    /* =====================================================
-       RODAPÉ
-       ===================================================== */
-
-    footer {
-        background: #171411;
-
-        color: #d8d0c5;
-
-        text-align: center;
-
-        padding: 30px 20px;
-    }
-
-    footer h3 {
-        color: white;
-
-        font-family: Georgia, serif;
-
-        font-size: 23px;
-
-        margin-bottom: 12px;
-    }
-
-    footer p {
-        font-size: 13px;
-
-        margin: 5px 0;
-    }
-
-    .telefone {
-        display: inline-block;
-
-        margin-top: 15px;
-
-        background: #b58a45;
-
-        color: white;
-
-        text-decoration: none;
-
-        padding: 11px 20px;
-
-        border-radius: 25px;
-
-        font-weight: bold;
-    }
-
-    /* =====================================================
-       TELEMÓVEL
-       ===================================================== */
-
-    @media (max-width: 600px) {
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yamore Grill · Restaurante Português · Biel/Bienne</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #111;
+            color: #222;
+        }
+
+        /* =========================
+           TOPO
+        ========================= */
 
         .topo {
-            padding: 6px 8px 8px;
-
-            background-size: 360px 360px;
-            background-position: center top;
+            background-image: url("https://amandiocampos54-lgtm.github.io/Yamore/imagens/fundo.jpg");
+            background-repeat: repeat;
+            background-size: 500px 500px;
+            padding: 8px 15px 10px;
+            text-align: center;
         }
 
         .logo {
-            width: min(250px, 78vw);
+            display: block;
+            width: min(300px, 72vw);
+            height: auto;
+            margin: 0 auto;
         }
 
         .subtitulo {
-            font-size: 10px;
-
-            letter-spacing: 2px;
-
             margin-top: 3px;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
         }
 
-        .categorias-inner {
-            justify-content: flex-start;
+        /* =========================
+           NAVEGAÇÃO
+        ========================= */
+
+        .categorias {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 6px;
+
+            padding: 10px;
+            background: #111;
+            border-bottom: 1px solid #333;
         }
 
         .categorias a {
-            font-size: 12px;
-
-            padding: 8px 13px;
+            color: white;
+            text-decoration: none;
+            background: #292929;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: bold;
         }
 
-        .menu {
-            width: 92%;
-
-            padding-top: 28px;
+        .categorias a:hover {
+            background: #444;
         }
 
-        .introducao {
-            margin-bottom: 28px;
+        /* =========================
+           CONTEÚDO
+        ========================= */
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 12px 40px;
         }
 
-        .introducao h1 {
-            font-size: 32px;
+        .secao {
+            margin-bottom: 30px;
+            scroll-margin-top: 75px;
         }
 
-        .titulo-categoria h2 {
-            font-size: 21px;
+        .titulo-secao {
+            margin: 0 0 12px;
+            padding: 10px 12px;
+
+            background: #1b1b1b;
+            color: white;
+
+            border-left: 5px solid #d79b35;
+            border-radius: 5px;
+
+            font-size: 22px;
         }
 
-        .prato {
-            padding: 15px;
+        .subtitulo-secao {
+            margin: 18px 0 8px;
+            padding-bottom: 5px;
+
+            color: #d79b35;
+            font-size: 18px;
+            border-bottom: 1px solid #555;
         }
 
-        .prato h3 {
+        /* =========================
+           ITENS
+        ========================= */
+
+        .item {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 15px;
+
+            padding: 10px 5px;
+            border-bottom: 1px solid #333;
+        }
+
+        .item:last-child {
+            border-bottom: none;
+        }
+
+        .nome {
             font-size: 16px;
-        }
-
-        .preco {
-            font-size: 16px;
+            font-weight: bold;
+            color: white;
         }
 
         .descricao {
-            font-size: 12px;
+            margin-top: 3px;
+            color: #bbb;
+            font-size: 13px;
+            line-height: 1.4;
         }
 
-        .linha {
-            display: none;
+        .preco {
+            flex-shrink: 0;
+            color: #d79b35;
+            font-size: 16px;
+            font-weight: bold;
+            white-space: nowrap;
         }
 
-        .prato-topo {
-            justify-content: space-between;
+        /* =========================
+           ESPECIALIDADES
+        ========================= */
+
+        .item.destaque {
+            position: relative;
+
+            margin: 8px 0;
+            padding: 13px 12px;
+
+            background: linear-gradient(
+                90deg,
+                rgba(215, 155, 53, 0.16),
+                rgba(215, 155, 53, 0.04)
+            );
+
+            border: 1px solid rgba(215, 155, 53, 0.45);
+            border-left: 5px solid #d79b35;
+            border-radius: 6px;
         }
 
-        .subcategoria {
+        .item.destaque .nome {
+            color: #f0b94d;
             font-size: 17px;
         }
-    }
-</style>
 
-</head><body><!-- =====================================================
-     CABEÇALHO
-     ===================================================== -->
+        .item.destaque .preco {
+            color: #f0b94d;
+            font-size: 17px;
+        }
+
+        .especialidade {
+            display: inline-block;
+            margin-left: 7px;
+            padding: 2px 6px;
+
+            background: #d79b35;
+            color: #111;
+
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: bold;
+            vertical-align: middle;
+            text-transform: uppercase;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 25px 15px;
+            text-align: center;
+
+            background: #0a0a0a;
+            color: #aaa;
+
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        footer a {
+            color: #d79b35;
+            text-decoration: none;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .topo {
+                padding: 6px 8px 8px;
+            }
+
+            .logo {
+                width: min(250px, 78vw);
+            }
+
+            .subtitulo {
+                font-size: 11px;
+            }
+
+            .categorias {
+                justify-content: flex-start;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding: 8px;
+            }
+
+            .categorias a {
+                flex-shrink: 0;
+                font-size: 12px;
+                padding: 7px 10px;
+            }
+
+            main {
+                padding: 15px 10px 30px;
+            }
+
+            .titulo-secao {
+                font-size: 20px;
+            }
+
+            .item {
+                gap: 10px;
+            }
+
+            .nome {
+                font-size: 15px;
+            }
+
+            .preco {
+                font-size: 15px;
+            }
+
+            .item.destaque .nome,
+            .item.destaque .preco {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     TOPO
+========================= -->
 
 <header class="topo">
 
     <img
+        class="logo"
         src="https://amandiocampos54-lgtm.github.io/Yamore/imagens/logo.png"
         alt="Yamore Grill"
-        class="logo"
     >
 
     <div class="subtitulo">
@@ -465,982 +307,760 @@
 </header>
 
 
-<!-- =====================================================
-     MENU DE CATEGORIAS
-     ===================================================== -->
+<!-- =========================
+     NAVEGAÇÃO
+========================= -->
 
 <nav class="categorias">
 
-    <div class="categorias-inner">
-
-        <a href="#carnes">
-            Carnes
-        </a>
-
-        <a href="#cervejaria">
-            Cervejaria
-        </a>
-
-        <a href="#peixes">
-            Peixes
-        </a>
-
-        <a href="#infantil">
-            Infantil
-        </a>
-
-        <a href="#sobremesas">
-            Sobremesas
-        </a>
-
-        <a href="#vinhos">
-            Vinhos
-        </a>
-
-        <a href="#bebidas">
-            Bebidas
-        </a>
-
-        <a href="#cafeteria">
-            Cafetaria
-        </a>
-
-    </div>
+    <a href="#carnes">Carnes</a>
+    <a href="#cervejaria">Cervejaria</a>
+    <a href="#peixes">Peixes</a>
+    <a href="#infantil">Infantil</a>
+    <a href="#sobremesas">Sobremesas</a>
+    <a href="#vinhos">Vinhos</a>
+    <a href="#bebidas">Bebidas</a>
+    <a href="#cafeteria">Cafetaria</a>
 
 </nav>
 
 
-<!-- =====================================================
-     CONTEÚDO
-     ===================================================== -->
+<main>
 
-<main class="menu">
+<!-- =========================
+     CARNES
+========================= -->
 
-    <div class="introducao">
+<section class="secao" id="carnes">
 
-        <h1>
-            O nosso menu
-        </h1>
+    <h2 class="titulo-secao">Carnes</h2>
 
-        <p>
-            Sabores portugueses preparados com tradição.
-        </p>
+    <div class="item">
+        <div>
+            <div class="nome">Chuletón</div>
+        </div>
+        <div class="preco">37.-</div>
+    </div>
 
+    <div class="item">
+        <div>
+            <div class="nome">Terra &amp; Mar</div>
+        </div>
+        <div class="preco">37.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Naco na Pedra</div>
+        </div>
+        <div class="preco">37.-</div>
+    </div>
+
+    <!-- ESPECIALIDADE -->
+    <div class="item destaque">
+        <div>
+            <div class="nome">
+                Espetada
+                <span class="especialidade">Especialidade</span>
+            </div>
+        </div>
+        <div class="preco">37.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Ribs</div>
+        </div>
+        <div class="preco">23.-</div>
+    </div>
+
+    <!-- ESPECIALIDADE -->
+    <div class="item destaque">
+        <div>
+            <div class="nome">
+                Churrasco de Boi
+                <span class="especialidade">Especialidade</span>
+            </div>
+        </div>
+        <div class="preco">35.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Bitoque (Vaca)</div>
+        </div>
+        <div class="preco">28.-</div>
+    </div>
+
+    <!-- ESPECIALIDADE -->
+    <div class="item destaque">
+        <div>
+            <div class="nome">
+                Picanha
+                <span class="especialidade">Especialidade</span>
+            </div>
+        </div>
+        <div class="preco">33.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Frango Churrasco</div>
+        </div>
+        <div class="preco">23.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Febras de Porco</div>
+        </div>
+        <div class="preco">24.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Barriguinhas</div>
+        </div>
+        <div class="preco">24.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Grelhada Mista</div>
+        </div>
+        <div class="preco">26.-</div>
+    </div>
+
+    <!-- NOVA ESPECIALIDADE -->
+    <div class="item destaque">
+        <div>
+            <div class="nome">
+                Tomahawk Steak
+                <span class="especialidade">Especialidade</span>
+            </div>
+            <div class="descricao">
+                Preço a definir
+            </div>
+        </div>
+        <div class="preco">A definir</div>
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CERVEJARIA
+========================= -->
+
+<section class="secao" id="cervejaria">
+
+    <h2 class="titulo-secao">Cervejaria</h2>
+
+    <div class="item">
+        <div>
+            <div class="nome">Alheira</div>
+            <div class="descricao">Duas por 12.-</div>
+        </div>
+        <div class="preco">7.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Chouriça</div>
+            <div class="descricao">Duas por 12.-</div>
+        </div>
+        <div class="preco">7.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Ovos Rotos</div>
+        </div>
+        <div class="preco">18.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Francesinha Porco</div>
+        </div>
+        <div class="preco">23.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Francesinha Vaca</div>
+        </div>
+        <div class="preco">26.-</div>
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PEIXES
+========================= -->
+
+<section class="secao" id="peixes">
+
+    <h2 class="titulo-secao">Peixes</h2>
+
+    <div class="item">
+        <div>
+            <div class="nome">Mar &amp; Mar</div>
+        </div>
+        <div class="preco">37.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Gambas Grelhadas</div>
+        </div>
+        <div class="preco">35.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Polvo à Lagareiro</div>
+        </div>
+        <div class="preco">33.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Salmão Grelhado</div>
+        </div>
+        <div class="preco">28.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Chocos Grelhados</div>
+        </div>
+        <div class="preco">28.-</div>
+    </div>
+
+    <!-- ESPECIALIDADE -->
+    <div class="item destaque">
+        <div>
+            <div class="nome">
+                Bacalhau à Casa
+                <span class="especialidade">Especialidade</span>
+            </div>
+        </div>
+        <div class="preco">30.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Bacalhau Grelhado</div>
+        </div>
+        <div class="preco">30.-</div>
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MENU INFANTIL
+========================= -->
+
+<section class="secao" id="infantil">
+
+    <h2 class="titulo-secao">Menu Infantil</h2>
+
+    <div class="item">
+        <div>
+            <div class="nome">Salsicha</div>
+        </div>
+        <div class="preco">12.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Nuggets</div>
+        </div>
+        <div class="preco">12.-</div>
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SOBREMESAS
+========================= -->
+
+<section class="secao" id="sobremesas">
+
+    <h2 class="titulo-secao">Sobremesas</h2>
+
+    <div class="item">
+        <div>
+            <div class="nome">Sobremesa</div>
+            <div class="descricao">Várias opções</div>
+        </div>
+        <div class="preco">6.-</div>
+    </div>
+
+</section>
+
+
+<!-- =========================
+     VINHOS
+========================= -->
+
+<section class="secao" id="vinhos">
+
+    <h2 class="titulo-secao">Vinhos</h2>
+
+    <!-- VINHO TINTO -->
+
+    <h3 class="subtitulo-secao">Vinho Tinto</h3>
+
+    <div class="item">
+        <div>
+            <div class="nome">Vinho da Casa (Copo)</div>
+        </div>
+        <div class="preco">7.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Vinho da Casa (50cl)</div>
+        </div>
+        <div class="preco">14.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Vila Real Reserva (Douro) 75cl</div>
+        </div>
+        <div class="preco">25.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Tapada das Lebres (Alentejo) 75cl</div>
+        </div>
+        <div class="preco">28.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Cancellus Premium (Douro) 75cl</div>
+        </div>
+        <div class="preco">30.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Piano Reserva (Douro) 75cl</div>
+        </div>
+        <div class="preco">30.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Mariana 75cl</div>
+        </div>
+        <div class="preco">30.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Trinca Bolotas (Alentejo) 75cl</div>
+        </div>
+        <div class="preco">30.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Adega de Borba Reserva (Alentejo) 75cl</div>
+        </div>
+        <div class="preco">30.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Bafarela Reserva (Douro) 75cl</div>
+        </div>
+        <div class="preco">32.-</div>
+    </div>
+
+    <div class="item destaque">
+        <div>
+            <div class="nome">Esporão Reserva (Alentejo) 75cl</div>
+        </div>
+        <div class="preco">35.-</div>
     </div>
 
 
-    <!-- =================================================
-         CARNES
-         ================================================= -->
+    <!-- VINHO ROSÉ -->
 
-    <section id="carnes" class="categoria">
+    <h3 class="subtitulo-secao">Vinho Rosé</h3>
 
-        <div class="titulo-categoria">
-            <h2>Carnes</h2>
+    <div class="item">
+        <div>
+            <div class="nome">Mateus 75cl</div>
         </div>
+        <div class="preco">25.-</div>
+    </div>
 
-
-        <article class="prato destaque">
-            <div class="prato-topo">
-                <h3>Chuletón</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 37.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato destaque">
-            <div class="prato-topo">
-                <h3>Terra &amp; Mar</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 37.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato destaque">
-            <div class="prato-topo">
-                <h3>Naco na Pedra</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 37.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Espetada</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 37.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Ribs</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 23.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Churrasco de Boi</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 35.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Bitoque (Vaca)</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 28.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato destaque">
-            <div class="prato-topo">
-                <h3>Picanha</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 33.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Frango Churrasco</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 23.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Febras de Porco</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 24.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Barriguinhas</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 24.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Grelhada Mista</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 26.–</span>
-            </div>
-        </article>
-
-    </section>
-
-
-    <!-- =================================================
-         CERVEJARIA
-         ================================================= -->
-
-    <section id="cervejaria" class="categoria">
-
-        <div class="titulo-categoria">
-            <h2>Cervejaria</h2>
+    <div class="item">
+        <div>
+            <div class="nome">Loureiro (Ponte de Lima) 75cl</div>
         </div>
+        <div class="preco">25.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Tapada das Lebres 75cl</div>
+        </div>
+        <div class="preco">28.-</div>
+    </div>
 
 
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Alheira</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 7.–</span>
-            </div>
+    <!-- VINHO VERDE / BRANCO -->
 
+    <h3 class="subtitulo-secao">Vinho Verde / Branco</h3>
+
+    <div class="item">
+        <div>
+            <div class="nome">Vinho da Casa (Copo)</div>
+        </div>
+        <div class="preco">7.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Vinho da Casa (50cl)</div>
+        </div>
+        <div class="preco">14.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Loureiro (Ponte de Lima) 75cl</div>
+        </div>
+        <div class="preco">25.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Muralhas (Monção) 75cl</div>
+        </div>
+        <div class="preco">27.-</div>
+    </div>
+
+    <div class="item destaque">
+        <div>
+            <div class="nome">Alvarinho (Monção) 75cl</div>
+        </div>
+        <div class="preco">32.-</div>
+    </div>
+
+
+    <!-- PROSECCO -->
+
+    <h3 class="subtitulo-secao">Prosecco</h3>
+
+    <div class="item destaque">
+        <div>
+            <div class="nome">Prosecco 75cl</div>
+        </div>
+        <div class="preco">35.-</div>
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BEBIDAS
+========================= -->
+
+<section class="secao" id="bebidas">
+
+    <h2 class="titulo-secao">Bebidas</h2>
+
+    <!-- CERVEJA -->
+
+    <h3 class="subtitulo-secao">Cerveja</h3>
+
+    <div class="item">
+        <div>
+            <div class="nome">Imperial 25cl</div>
+        </div>
+        <div class="preco">3,7.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Sagres Mini 25cl</div>
+        </div>
+        <div class="preco">3,7.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Super Bock Mini 25cl</div>
+        </div>
+        <div class="preco">3,7.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Super Bock 33cl</div>
+        </div>
+        <div class="preco">4.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Super Bock Stout 33cl</div>
+        </div>
+        <div class="preco">4.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Super Bock 0.0% 33cl</div>
+        </div>
+        <div class="preco">4.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Heineken 25cl</div>
+        </div>
+        <div class="preco">4.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Desperados 33cl</div>
+        </div>
+        <div class="preco">6.-</div>
+    </div>
+
+
+    <!-- COCKTAILS & SANGRIA -->
+
+    <h3 class="subtitulo-secao">Cocktails &amp; Sangria</h3>
+
+    <div class="item">
+        <div>
+            <div class="nome">Aperol Spritz</div>
+        </div>
+        <div class="preco">8,5.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Hugo Spritz</div>
+        </div>
+        <div class="preco">8,5.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Mojito</div>
+        </div>
+        <div class="preco">8,5.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Caipirinha</div>
+        </div>
+        <div class="preco">8,5.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Caipiroska</div>
+        </div>
+        <div class="preco">8,5.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Sangria de Maracujá</div>
+            <div class="descricao">1 L (100cl)</div>
+        </div>
+        <div class="preco">22.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Sangria de Maçã Verde</div>
+            <div class="descricao">1 L (100cl)</div>
+        </div>
+        <div class="preco">22.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Sangria de Frutos Vermelhos</div>
+            <div class="descricao">1 L (100cl)</div>
+        </div>
+        <div class="preco">22.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Sangria</div>
+            <div class="descricao">2 L (200cl)</div>
+        </div>
+        <div class="preco">35.-</div>
+    </div>
+
+
+    <!-- BEBIDAS NÃO ALCOÓLICAS -->
+
+    <h3 class="subtitulo-secao">Bebidas Não Alcoólicas / Refrigerantes</h3>
+
+    <div class="item">
+        <div>
+            <div class="nome">Água 33cl</div>
+        </div>
+        <div class="preco">3,5.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Água 1,5 Litro</div>
+        </div>
+        <div class="preco">10.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Água c/ Gás 33cl</div>
+        </div>
+        <div class="preco">3,5.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Água c/ Gás 1,5 Litro</div>
+        </div>
+        <div class="preco">10.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Coca-Cola 33cl</div>
+        </div>
+        <div class="preco">3,7.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Coca-Cola Zero 33cl</div>
+        </div>
+        <div class="preco">3,7.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Guaraná 33cl</div>
+        </div>
+        <div class="preco">3,7.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Sprite 33cl</div>
+        </div>
+        <div class="preco">3,7.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Ice Tea 33cl</div>
+        </div>
+        <div class="preco">3,7.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Sumol 33cl</div>
+        </div>
+        <div class="preco">3,7.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Red Bull 25cl</div>
+        </div>
+        <div class="preco">5.-</div>
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CAFETARIA
+========================= -->
+
+<section class="secao" id="cafeteria">
+
+    <h2 class="titulo-secao">Cafetaria</h2>
+
+    <div class="item">
+        <div>
+            <div class="nome">Café</div>
+        </div>
+        <div class="preco">4.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Cafe</div>
+        </div>
+        <div class="preco">3,5.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Expresso Capuccino</div>
+        </div>
+        <div class="preco">4.-</div>
+    </div>
+
+    <div class="item">
+        <div>
+            <div class="nome">Chá</div>
             <div class="descricao">
-                Duas por CHF 12.–
+                Limão, Cidreira, Camomila, Menta, Verde, Preto
             </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Chouriço</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 7.–</span>
-            </div>
-
-            <div class="descricao">
-                Duas por CHF 12.–
-            </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Ovos Rotos</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 18.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Francesinha Porco</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 23.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato destaque">
-            <div class="prato-topo">
-                <h3>Francesinha Vaca</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 26.–</span>
-            </div>
-        </article>
-
-    </section>
-
-
-    <!-- =================================================
-         PEIXES
-         ================================================= -->
-
-    <section id="peixes" class="categoria">
-
-        <div class="titulo-categoria">
-            <h2>Peixes</h2>
         </div>
+        <div class="preco">4.-</div>
+    </div>
 
-
-        <article class="prato destaque">
-            <div class="prato-topo">
-                <h3>Mar &amp; Mar</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 37.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Gambas Grelhadas</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 35.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato destaque">
-            <div class="prato-topo">
-                <h3>Polvo à Lagareiro</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 33.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Salmão Grelhado</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 28.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Chocos Grelhados</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 28.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Bacalhau à Casa</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 30.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Bacalhau Grelhado</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 30.–</span>
-            </div>
-        </article>
-
-    </section>
-
-
-    <!-- =================================================
-         MENU INFANTIL
-         ================================================= -->
-
-    <section id="infantil" class="categoria">
-
-        <div class="titulo-categoria">
-            <h2>Menu Infantil</h2>
-        </div>
-
-
-        <div class="subcategoria">
-            Kinder
-        </div>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Salsicha</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 12.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Nuggets</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 12.–</span>
-            </div>
-        </article>
-
-    </section>
-
-
-    <!-- =================================================
-         SOBREMESAS
-         ================================================= -->
-
-    <section id="sobremesas" class="categoria">
-
-        <div class="titulo-categoria">
-            <h2>Sobremesas</h2>
-        </div>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Sobremesa</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 6.–</span>
-            </div>
-
-            <div class="descricao">
-                Várias opções
-            </div>
-        </article>
-
-    </section>
-
-
-    <!-- =================================================
-         VINHOS
-         ================================================= -->
-
-    <section id="vinhos" class="categoria">
-
-        <div class="titulo-categoria">
-            <h2>Vinhos</h2>
-        </div>
-
-
-        <!-- VINHO TINTO -->
-
-        <div class="subcategoria">
-            Vinho Tinto
-        </div>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Vinho da Casa</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 7.–</span>
-            </div>
-            <div class="descricao">Copo</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Vinho da Casa</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 14.–</span>
-            </div>
-            <div class="descricao">50cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Vila Real Reserva</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 25.–</span>
-            </div>
-            <div class="descricao">Douro · 75cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Tapada das Lebres</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 28.–</span>
-            </div>
-            <div class="descricao">Alentejo · 75cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Cancellus Premium</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 30.–</span>
-            </div>
-            <div class="descricao">Douro · 75cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Piano Reserva</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 30.–</span>
-            </div>
-            <div class="descricao">Douro · 75cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Mariana</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 30.–</span>
-            </div>
-            <div class="descricao">75cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Trinca Bolotas</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 30.–</span>
-            </div>
-            <div class="descricao">Alentejo · 75cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Adega de Borba Reserva</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 30.–</span>
-            </div>
-            <div class="descricao">Alentejo · 75cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Bafarela Reserva</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 32.–</span>
-            </div>
-            <div class="descricao">Douro · 75cl</div>
-        </article>
-
-
-        <article class="prato destaque">
-            <div class="prato-topo">
-                <h3>Esporão Reserva</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 35.–</span>
-            </div>
-            <div class="descricao">Alentejo · 75cl</div>
-        </article>
-
-
-        <!-- VINHO ROSÉ -->
-
-        <div class="subcategoria">
-            Vinho Rosé
-        </div>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Mateus</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 25.–</span>
-            </div>
-            <div class="descricao">75cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Loureiro</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 25.–</span>
-            </div>
-            <div class="descricao">Ponte de Lima · 75cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Tapada das Lebres</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 28.–</span>
-            </div>
-            <div class="descricao">75cl</div>
-        </article>
-
-
-        <!-- VINHO VERDE / BRANCO -->
-
-        <div class="subcategoria">
-            Vinho Verde / Branco
-        </div>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Vinho da Casa</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 7.–</span>
-            </div>
-            <div class="descricao">Copo</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Vinho da Casa</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 14.–</span>
-            </div>
-            <div class="descricao">50cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Loureiro</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 25.–</span>
-            </div>
-            <div class="descricao">Ponte de Lima · 75cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Muralhas</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 27.–</span>
-            </div>
-            <div class="descricao">Monção · 75cl</div>
-        </article>
-
-
-        <article class="prato destaque">
-            <div class="prato-topo">
-                <h3>Alvarinho</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 32.–</span>
-            </div>
-            <div class="descricao">Monção · 75cl</div>
-        </article>
-
-
-        <!-- PROSECCO -->
-
-        <div class="subcategoria">
-            Prosecco
-        </div>
-
-
-        <article class="prato destaque">
-            <div class="prato-topo">
-                <h3>Prosecco</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 35.–</span>
-            </div>
-            <div class="descricao">75cl</div>
-        </article>
-
-    </section>
-
-
-    <!-- =================================================
-         BEBIDAS
-         ================================================= -->
-
-    <section id="bebidas" class="categoria">
-
-        <div class="titulo-categoria">
-            <h2>Bebidas</h2>
-        </div>
-
-
-        <!-- CERVEJA -->
-
-        <div class="subcategoria">
-            Cerveja
-        </div>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Imperial</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 3,70</span>
-            </div>
-            <div class="descricao">25cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Sagres Mini</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 3,70</span>
-            </div>
-            <div class="descricao">25cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Super Bock Mini</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 3,70</span>
-            </div>
-            <div class="descricao">25cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Super Bock</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 4.–</span>
-            </div>
-            <div class="descricao">33cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Super Bock Stout</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 4.–</span>
-            </div>
-            <div class="descricao">33cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Super Bock 0.0%</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 4.–</span>
-            </div>
-            <div class="descricao">33cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Heineken</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 4.–</span>
-            </div>
-            <div class="descricao">25cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Desperados</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 6.–</span>
-            </div>
-            <div class="descricao">33cl</div>
-        </article>
-
-
-        <!-- COCKTAILS -->
-
-        <div class="subcategoria">
-            Cocktails &amp; Sangria
-        </div>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Cocktails</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 8,50</span>
-            </div>
-
-            <div class="descricao">
-                Aperol Spritz · Hugo Spritz · Mojito · Caipirinha · Caipiroska
-            </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Sangria</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 22.–</span>
-            </div>
-
-            <div class="descricao">
-                Maracujá · Maçã Verde · Frutos Vermelhos · 1 Litro (100cl)
-            </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Sangria</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 35.–</span>
-            </div>
-
-            <div class="descricao">
-                Maracujá · Maçã Verde · Frutos Vermelhos · 2 Litros (200cl)
-            </div>
-        </article>
-
-
-        <!-- REFRIGERANTES -->
-
-        <div class="subcategoria">
-            Bebidas Não Alcoólicas / Refrigerantes
-        </div>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Água</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 3,50</span>
-            </div>
-            <div class="descricao">33cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Água</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 10.–</span>
-            </div>
-            <div class="descricao">1,5 Litro</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Água com Gás</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 3,50</span>
-            </div>
-            <div class="descricao">33cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Água com Gás</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 10.–</span>
-            </div>
-            <div class="descricao">1,5 Litro</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Coca-Cola</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 3,70</span>
-            </div>
-            <div class="descricao">33cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Coca-Cola Zero</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 3,70</span>
-            </div>
-            <div class="descricao">33cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Guaraná</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 3,70</span>
-            </div>
-            <div class="descricao">33cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Sprite</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 3,70</span>
-            </div>
-            <div class="descricao">33cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Ice Tea</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 3,70</span>
-            </div>
-            <div class="descricao">33cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Sumol</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 3,70</span>
-            </div>
-            <div class="descricao">33cl</div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Red Bull</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 5.–</span>
-            </div>
-            <div class="descricao">25cl</div>
-        </article>
-
-    </section>
-
-
-    <!-- =================================================
-         CAFETARIA
-         ================================================= -->
-
-    <section id="cafeteria" class="categoria">
-
-        <div class="titulo-categoria">
-            <h2>Cafetaria</h2>
-        </div>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Café</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 4.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Café</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 3,50</span>
-            </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Expresso Cappuccino</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 4.–</span>
-            </div>
-        </article>
-
-
-        <article class="prato">
-            <div class="prato-topo">
-                <h3>Chá</h3>
-                <span class="linha"></span>
-                <span class="preco">CHF 4.–</span>
-            </div>
-
-            <div class="descricao">
-                Limão · Cidreira · Camomila · Menta · Verde · Preto
-            </div>
-        </article>
-
-    </section>
+</section>
 
 </main>
 
 
-<!-- =====================================================
+<!-- =========================
      RODAPÉ
-     ===================================================== -->
+========================= -->
 
 <footer>
 
-    <h3>
-        Yamore Grill
-    </h3>
+    <strong>Yamore Grill</strong><br>
 
-    <p>
-        Neumarkstrasse 52 · 2503 Biel/Bienne
-    </p>
+    Neumarkstrasse 52 · 2503 Biel/Bienne<br>
+    Suíça<br>
 
-    <p>
-        Suíça
-    </p>
-
-    <a
-        href="tel:+41782556320"
-        class="telefone"
-    >
-        📞 +41 78 255 63 20
+    <a href="tel:+41782556320">
+        +41 78 255 63 20
     </a>
 
-    <p style="margin-top:20px; color:#777;">
-        © 2026 Yamore Grill
-    </p>
+    <br><br>
+
+    © 2026 Yamore Grill
 
 </footer>
 
