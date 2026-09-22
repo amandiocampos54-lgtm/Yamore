@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -27,9 +26,7 @@
             line-height: 1.5;
         }
 
-        /* =========================
-           TOPO / LOGO
-        ========================= */
+        /* TOPO */
 
         .topo {
             background: #171411;
@@ -54,9 +51,7 @@
             margin-top: 12px;
         }
 
-        /* =========================
-           MENU DE CATEGORIAS
-        ========================= */
+        /* CATEGORIAS */
 
         .categorias {
             position: sticky;
@@ -96,9 +91,7 @@
             color: white;
         }
 
-        /* =========================
-           CONTEÚDO
-        ========================= */
+        /* MENU */
 
         .menu {
             width: min(900px, 94%);
@@ -123,9 +116,7 @@
             font-size: 15px;
         }
 
-        /* =========================
-           CATEGORIAS
-        ========================= */
+        /* CATEGORIA */
 
         .categoria {
             margin-bottom: 42px;
@@ -155,9 +146,7 @@
             white-space: nowrap;
         }
 
-        /* =========================
-           PRATOS
-        ========================= */
+        /* PRATOS */
 
         .prato {
             background: #fffdf9;
@@ -202,9 +191,7 @@
             padding-right: 50px;
         }
 
-        /* =========================
-           DESTAQUE
-        ========================= */
+        /* DESTAQUES */
 
         .destaque {
             border: 1px solid #b58a45;
@@ -227,9 +214,7 @@
             margin-top: 7px;
         }
 
-        /* =========================
-           RODAPÉ
-        ========================= */
+        /* RODAPÉ */
 
         footer {
             background: #171411;
@@ -261,9 +246,7 @@
             font-weight: bold;
         }
 
-        /* =========================
-           MOBILE
-        ========================= */
+        /* MOBILE */
 
         @media (max-width: 600px) {
 
@@ -337,11 +320,10 @@
 
 <body>
 
-    <!-- =========================
-         LOGO
-    ========================== -->
+    <!-- LOGO -->
 
     <header class="topo">
+
         <img
             src="imagens/logo.jpg"
             alt="Yamore Grill"
@@ -351,260 +333,274 @@
         <div class="subtitulo">
             Restaurante Português · Biel/Bienne
         </div>
+
     </header>
 
 
-    <!-- =========================
-         CATEGORIAS
-    ========================== -->
+    <!-- CATEGORIAS -->
 
     <nav class="categorias">
+
         <div class="categorias-inner">
 
-            <a href="#entradas">Entradas</a>
-            <a href="#grelhados">Grelhados</a>
-            <a href="#peixe">Peixe</a>
-            <a href="#pratos">Pratos</a>
-            <a href="#acompanhamentos">Acompanhamentos</a>
+            <a href="#carnes">Carnes</a>
+            <a href="#portugueses">Portugueses</a>
+            <a href="#peixe">Peixe & Marisco</a>
             <a href="#sobremesas">Sobremesas</a>
-            <a href="#bebidas">Bebidas</a>
 
         </div>
+
     </nav>
 
 
-    <!-- =========================
-         MENU
-    ========================== -->
+    <!-- MENU -->
 
     <main class="menu">
 
         <div class="introducao">
+
             <h1>O nosso menu</h1>
-            <p>Sabores portugueses preparados com tradição.</p>
+
+            <p>
+                Sabores portugueses preparados com tradição.
+            </p>
+
         </div>
 
 
         <!-- =========================
-             ENTRADAS
+             CARNES
         ========================== -->
 
-        <section id="entradas" class="categoria">
+        <section id="carnes" class="categoria">
 
             <div class="titulo-categoria">
-                <h2>Entradas</h2>
+                <h2>Carnes & Grelhados</h2>
             </div>
 
-            <article class="prato">
-                <div class="prato-topo">
-                    <h3>Pão de alho</h3>
-                    <span class="linha"></span>
-                    <span class="preco">4.00 CHF</span>
-                </div>
-                <p class="descricao">
-                    Pão de alho preparado na casa.
-                </p>
-            </article>
-
-            <article class="prato">
-                <div class="prato-topo">
-                    <h3>Chouriço assado</h3>
-                    <span class="linha"></span>
-                    <span class="preco">8.00 CHF</span>
-                </div>
-            </article>
-
-            <article class="prato">
-                <div class="prato-topo">
-                    <h3>Camarão ao alho</h3>
-                    <span class="linha"></span>
-                    <span class="preco">12.00 CHF</span>
-                </div>
-            </article>
-
-        </section>
-
-
-        <!-- =========================
-             GRELHADOS
-        ========================== -->
-
-        <section id="grelhados" class="categoria">
-
-            <div class="titulo-categoria">
-                <h2>Grelhados</h2>
-            </div>
 
             <article class="prato destaque">
+
                 <div class="prato-topo">
-                    <h3>Bife à Portuguesa</h3>
+
+                    <h3>Picanha</h3>
+
                     <span class="linha"></span>
-                    <span class="preco">24.00 CHF</span>
+
+                    <span class="preco">CHF</span>
+
                 </div>
 
-                <p class="descricao">
-                    Bife grelhado servido ao estilo tradicional português.
-                </p>
+                <span class="etiqueta">
+                    ESPECIALIDADE
+                </span>
 
-                <span class="etiqueta">ESPECIALIDADE</span>
             </article>
 
+
             <article class="prato">
+
                 <div class="prato-topo">
-                    <h3>Entrecôte grelhado</h3>
+
+                    <h3>Churrasco de boi</h3>
+
                     <span class="linha"></span>
-                    <span class="preco">29.00 CHF</span>
+
+                    <span class="preco">CHF</span>
+
                 </div>
+
             </article>
 
-            <article class="prato">
+
+            <article class="prato destaque">
+
                 <div class="prato-topo">
-                    <h3>Frango grelhado</h3>
+
+                    <h3>Tomahawk Steak</h3>
+
                     <span class="linha"></span>
-                    <span class="preco">18.00 CHF</span>
+
+                    <span class="preco">CHF</span>
+
                 </div>
 
-                <p class="descricao">
-                    Frango grelhado acompanhado de batata e salada.
-                </p>
+                <span class="etiqueta">
+                    ESPECIALIDADE
+                </span>
+
+            </article>
+
+
+            <article class="prato">
+
+                <div class="prato-topo">
+
+                    <h3>Grelhada mista</h3>
+
+                    <span class="linha"></span>
+
+                    <span class="preco">CHF</span>
+
+                </div>
+
             </article>
 
         </section>
 
 
         <!-- =========================
-             PEIXE
+             PRATOS PORTUGUESES
+        ========================== -->
+
+        <section id="portugueses" class="categoria">
+
+            <div class="titulo-categoria">
+
+                <h2>Pratos Portugueses</h2>
+
+            </div>
+
+
+            <article class="prato destaque">
+
+                <div class="prato-topo">
+
+                    <h3>Francesinha</h3>
+
+                    <span class="linha"></span>
+
+                    <span class="preco">CHF</span>
+
+                </div>
+
+                <span class="etiqueta">
+                    ESPECIALIDADE
+                </span>
+
+            </article>
+
+
+            <article class="prato">
+
+                <div class="prato-topo">
+
+                    <h3>Bacalhau à Gordo</h3>
+
+                    <span class="linha"></span>
+
+                    <span class="preco">CHF</span>
+
+                </div>
+
+            </article>
+
+
+            <article class="prato">
+
+                <div class="prato-topo">
+
+                    <h3>Bacalhau com natas</h3>
+
+                    <span class="linha"></span>
+
+                    <span class="preco">CHF</span>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =========================
+             PEIXE E MARISCO
         ========================== -->
 
         <section id="peixe" class="categoria">
 
             <div class="titulo-categoria">
-                <h2>Peixe</h2>
+
+                <h2>Peixe & Marisco</h2>
+
             </div>
+
+
+            <article class="prato">
+
+                <div class="prato-topo">
+
+                    <h3>Gambas</h3>
+
+                    <span class="linha"></span>
+
+                    <span class="preco">CHF</span>
+
+                </div>
+
+            </article>
+
+
+            <article class="prato">
+
+                <div class="prato-topo">
+
+                    <h3>Salmão</h3>
+
+                    <span class="linha"></span>
+
+                    <span class="preco">CHF</span>
+
+                </div>
+
+            </article>
+
+
+            <article class="prato">
+
+                <div class="prato-topo">
+
+                    <h3>Robalo</h3>
+
+                    <span class="linha"></span>
+
+                    <span class="preco">CHF</span>
+
+                </div>
+
+            </article>
+
+
+            <article class="prato">
+
+                <div class="prato-topo">
+
+                    <h3>Chocos grelhados</h3>
+
+                    <span class="linha"></span>
+
+                    <span class="preco">CHF</span>
+
+                </div>
+
+            </article>
+
 
             <article class="prato destaque">
 
                 <div class="prato-topo">
-                    <h3>Bacalhau à Brás</h3>
+
+                    <h3>Polvo</h3>
+
                     <span class="linha"></span>
-                    <span class="preco">22.00 CHF</span>
+
+                    <span class="preco">CHF</span>
+
                 </div>
 
-                <p class="descricao">
-                    Bacalhau desfiado, batata, ovo e azeitonas.
-                </p>
-
-                <span class="etiqueta">TRADICIONAL</span>
-
-            </article>
-
-            <article class="prato">
-
-                <div class="prato-topo">
-                    <h3>Bacalhau com natas</h3>
-                    <span class="linha"></span>
-                    <span class="preco">22.00 CHF</span>
-                </div>
-
-            </article>
-
-            <article class="prato">
-
-                <div class="prato-topo">
-                    <h3>Peixe grelhado</h3>
-                    <span class="linha"></span>
-                    <span class="preco">23.00 CHF</span>
-                </div>
-
-            </article>
-
-        </section>
-
-
-        <!-- =========================
-             PRATOS
-        ========================== -->
-
-        <section id="pratos" class="categoria">
-
-            <div class="titulo-categoria">
-                <h2>Pratos Portugueses</h2>
-            </div>
-
-            <article class="prato">
-
-                <div class="prato-topo">
-                    <h3>Francesinha</h3>
-                    <span class="linha"></span>
-                    <span class="preco">22.00 CHF</span>
-                </div>
-
-                <p class="descricao">
-                    Receita tradicional com molho especial.
-                </p>
-
-            </article>
-
-            <article class="prato">
-
-                <div class="prato-topo">
-                    <h3>Arroz de pato</h3>
-                    <span class="linha"></span>
-                    <span class="preco">21.00 CHF</span>
-                </div>
-
-            </article>
-
-            <article class="prato">
-
-                <div class="prato-topo">
-                    <h3>Carne de porco à Alentejana</h3>
-                    <span class="linha"></span>
-                    <span class="preco">23.00 CHF</span>
-                </div>
-
-            </article>
-
-        </section>
-
-
-        <!-- =========================
-             ACOMPANHAMENTOS
-        ========================== -->
-
-        <section id="acompanhamentos" class="categoria">
-
-            <div class="titulo-categoria">
-                <h2>Acompanhamentos</h2>
-            </div>
-
-            <article class="prato">
-
-                <div class="prato-topo">
-                    <h3>Batata frita</h3>
-                    <span class="linha"></span>
-                    <span class="preco">5.00 CHF</span>
-                </div>
-
-            </article>
-
-            <article class="prato">
-
-                <div class="prato-topo">
-                    <h3>Arroz</h3>
-                    <span class="linha"></span>
-                    <span class="preco">4.00 CHF</span>
-                </div>
-
-            </article>
-
-            <article class="prato">
-
-                <div class="prato-topo">
-                    <h3>Salada mista</h3>
-                    <span class="linha"></span>
-                    <span class="preco">5.00 CHF</span>
-                </div>
+                <span class="etiqueta">
+                    ESPECIALIDADE
+                </span>
 
             </article>
 
@@ -618,88 +614,52 @@
         <section id="sobremesas" class="categoria">
 
             <div class="titulo-categoria">
+
                 <h2>Sobremesas</h2>
+
             </div>
 
+
             <article class="prato">
 
                 <div class="prato-topo">
-                    <h3>Pastel de nata</h3>
+
+                    <h3>Pudim</h3>
+
                     <span class="linha"></span>
-                    <span class="preco">3.50 CHF</span>
+
+                    <span class="preco">CHF</span>
+
                 </div>
 
             </article>
 
+
             <article class="prato">
 
                 <div class="prato-topo">
-                    <h3>Pudim caseiro</h3>
+
+                    <h3>Bolo de bolacha</h3>
+
                     <span class="linha"></span>
-                    <span class="preco">6.00 CHF</span>
+
+                    <span class="preco">CHF</span>
+
                 </div>
 
             </article>
 
-            <article class="prato">
-
-                <div class="prato-topo">
-                    <h3>Sobremesa do dia</h3>
-                    <span class="linha"></span>
-                    <span class="preco">6.00 CHF</span>
-                </div>
-
-            </article>
-
-        </section>
-
-
-        <!-- =========================
-             BEBIDAS
-        ========================== -->
-
-        <section id="bebidas" class="categoria">
-
-            <div class="titulo-categoria">
-                <h2>Bebidas</h2>
-            </div>
 
             <article class="prato">
 
                 <div class="prato-topo">
-                    <h3>Água</h3>
+
+                    <h3>Mousse de chocolate</h3>
+
                     <span class="linha"></span>
-                    <span class="preco">4.00 CHF</span>
-                </div>
 
-            </article>
+                    <span class="preco">CHF</span>
 
-            <article class="prato">
-
-                <div class="prato-topo">
-                    <h3>Refrigerante</h3>
-                    <span class="linha"></span>
-                    <span class="preco">4.00 CHF</span>
-                </div>
-
-            </article>
-
-            <article class="prato">
-
-                <div class="prato-topo">
-                    <h3>Cerveja</h3>
-                    <span class="linha"></span>
-                    <span class="preco">5.00 CHF</span>
-                </div>
-
-            </article>
-
-            <article class="prato">
-
-                <div class="prato-topo">
-                    <h3>Vinho da casa</h3>
-                    <span class="linha"></span>
-                    <span class="preco">5.00 CHF</span>
                 </div>
 
             </article>
@@ -709,9 +669,7 @@
     </main>
 
 
-    <!-- =========================
-         RODAPÉ
-    ========================== -->
+    <!-- RODAPÉ -->
 
     <footer>
 
@@ -719,11 +677,16 @@
 
         <p>Restaurante Português</p>
 
-        <p>Neumarkstrasse 52 · 2503 Biel/Bienne</p>
+        <p>
+            Neumarkstrasse 52 · 2503 Biel/Bienne
+        </p>
 
         <p>Suíça</p>
 
-        <a href="tel:+41782556320" class="telefone">
+        <a
+            href="tel:+41782556320"
+            class="telefone"
+        >
             📞 +41 78 255 63 20
         </a>
 
@@ -735,4 +698,3 @@
 
 </body>
 </html>
-```
