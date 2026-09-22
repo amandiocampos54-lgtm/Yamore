@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-
-<html lang="pt">
+<!DOCTYPE html><html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="Menu Yamore Grill - Restaurante Português em Biel/Bienne, Suíça.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Menu Yamore Grill - Restaurante Português em Biel/Bienne, Suíça.">
 
 <title>Yamore Grill | Menu</title>
 
@@ -39,7 +35,6 @@
         background-size: 500px 500px;
         background-position: center top;
 
-        /* Banner mais baixo */
         padding: 8px 15px 10px;
 
         text-align: center;
@@ -115,7 +110,7 @@
 
         text-decoration: none;
 
-        padding: 9px 18px;
+        padding: 9px 16px;
 
         border-radius: 20px;
 
@@ -209,6 +204,24 @@
     }
 
     /* =====================================================
+       SUBCATEGORIAS
+       ===================================================== */
+
+    .subcategoria {
+        font-family: Georgia, serif;
+
+        color: #6f5228;
+
+        font-size: 18px;
+
+        margin: 24px 0 12px;
+
+        padding-bottom: 5px;
+
+        border-bottom: 1px solid #d8c6a7;
+    }
+
+    /* =====================================================
        PRATOS
        ===================================================== */
 
@@ -270,8 +283,6 @@
         font-size: 13px;
 
         margin-top: 5px;
-
-        padding-right: 50px;
     }
 
     .destaque {
@@ -359,7 +370,6 @@
     @media (max-width: 600px) {
 
         .topo {
-            /* Banner ainda mais compacto no telemóvel */
             padding: 6px 8px 8px;
 
             background-size: 360px 360px;
@@ -368,8 +378,6 @@
 
         .logo {
             width: min(250px, 78vw);
-
-            height: auto;
         }
 
         .subtitulo {
@@ -422,8 +430,6 @@
 
         .descricao {
             font-size: 12px;
-
-            padding-right: 0;
         }
 
         .linha {
@@ -433,14 +439,14 @@
         .prato-topo {
             justify-content: space-between;
         }
+
+        .subcategoria {
+            font-size: 17px;
+        }
     }
 </style>
 
-</head>
-
-<body>
-
-<!-- =====================================================
+</head><body><!-- =====================================================
      CABEÇALHO
      ===================================================== -->
 
@@ -467,20 +473,36 @@
 
     <div class="categorias-inner">
 
-        <a href="#carne">
-            Carne
-        </a>
-
-        <a href="#peixe">
-            Peixe &amp; Marisco
+        <a href="#carnes">
+            Carnes
         </a>
 
         <a href="#cervejaria">
             Cervejaria
         </a>
 
+        <a href="#peixes">
+            Peixes
+        </a>
+
+        <a href="#infantil">
+            Infantil
+        </a>
+
         <a href="#sobremesas">
             Sobremesas
+        </a>
+
+        <a href="#vinhos">
+            Vinhos
+        </a>
+
+        <a href="#bebidas">
+            Bebidas
+        </a>
+
+        <a href="#cafeteria">
+            Cafetaria
         </a>
 
     </div>
@@ -497,7 +519,7 @@
     <div class="introducao">
 
         <h1>
-            O nosso Menu
+            O nosso menu
         </h1>
 
         <p>
@@ -508,255 +530,121 @@
 
 
     <!-- =================================================
-         CARNE
+         CARNES
          ================================================= -->
 
-    <section id="carne" class="categoria">
+    <section id="carnes" class="categoria">
 
         <div class="titulo-categoria">
-
-            <h2>
-                Carne
-            </h2>
-
+            <h2>Carnes</h2>
         </div>
 
 
         <article class="prato destaque">
-
             <div class="prato-topo">
-
-                <h3>
-                    Picanha
-                </h3>
-
+                <h3>Chuletón</h3>
                 <span class="linha"></span>
-
-                <span class="preco">
-                    CHF
-                </span>
-
+                <span class="preco">CHF 37.–</span>
             </div>
-
-            <span class="etiqueta">
-                ESPECIALIDADE
-            </span>
-
-        </article>
-
-
-        <article class="prato">
-
-            <div class="prato-topo">
-
-                <h3>
-                    Churrasco de boi
-                </h3>
-
-                <span class="linha"></span>
-
-                <span class="preco">
-                    CHF
-                </span>
-
-            </div>
-
         </article>
 
 
         <article class="prato destaque">
-
             <div class="prato-topo">
-
-                <h3>
-                    Tomahawk Steak
-                </h3>
-
+                <h3>Terra &amp; Mar</h3>
                 <span class="linha"></span>
-
-                <span class="preco">
-                    CHF
-                </span>
-
+                <span class="preco">CHF 37.–</span>
             </div>
-
-            <span class="etiqueta">
-                ESPECIALIDADE
-            </span>
-
-        </article>
-
-
-        <article class="prato">
-
-            <div class="prato-topo">
-
-                <h3>
-                    Grelhada mista
-                </h3>
-
-                <span class="linha"></span>
-
-                <span class="preco">
-                    CHF
-                </span>
-
-            </div>
-
-        </article>
-
-    </section>
-
-
-    <!-- =================================================
-         PEIXE & MARISCO
-         ================================================= -->
-
-    <section id="peixe" class="categoria">
-
-        <div class="titulo-categoria">
-
-            <h2>
-                Peixe &amp; Marisco
-            </h2>
-
-        </div>
-
-
-        <article class="prato">
-
-            <div class="prato-topo">
-
-                <h3>
-                    Bacalhau à Gordo
-                </h3>
-
-                <span class="linha"></span>
-
-                <span class="preco">
-                    CHF
-                </span>
-
-            </div>
-
-        </article>
-
-
-        <article class="prato">
-
-            <div class="prato-topo">
-
-                <h3>
-                    Bacalhau com natas
-                </h3>
-
-                <span class="linha"></span>
-
-                <span class="preco">
-                    CHF
-                </span>
-
-            </div>
-
-        </article>
-
-
-        <article class="prato">
-
-            <div class="prato-topo">
-
-                <h3>
-                    Gambas
-                </h3>
-
-                <span class="linha"></span>
-
-                <span class="preco">
-                    CHF
-                </span>
-
-            </div>
-
-        </article>
-
-
-        <article class="prato">
-
-            <div class="prato-topo">
-
-                <h3>
-                    Salmão
-                </h3>
-
-                <span class="linha"></span>
-
-                <span class="preco">
-                    CHF
-                </span>
-
-            </div>
-
-        </article>
-
-
-        <article class="prato">
-
-            <div class="prato-topo">
-
-                <h3>
-                    Robalo
-                </h3>
-
-                <span class="linha"></span>
-
-                <span class="preco">
-                    CHF
-                </span>
-
-            </div>
-
-        </article>
-
-
-        <article class="prato">
-
-            <div class="prato-topo">
-
-                <h3>
-                    Chocos grelhados
-                </h3>
-
-                <span class="linha"></span>
-
-                <span class="preco">
-                    CHF
-                </span>
-
-            </div>
-
         </article>
 
 
         <article class="prato destaque">
-
             <div class="prato-topo">
-
-                <h3>
-                    Polvo
-                </h3>
-
+                <h3>Naco na Pedra</h3>
                 <span class="linha"></span>
-
-                <span class="preco">
-                    CHF
-                </span>
-
+                <span class="preco">CHF 37.–</span>
             </div>
+        </article>
 
-            <span class="etiqueta">
-                ESPECIALIDADE
-            </span>
 
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Espetada</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 37.–</span>
+            </div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Ribs</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 23.–</span>
+            </div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Churrasco de Boi</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 35.–</span>
+            </div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Bitoque (Vaca)</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 28.–</span>
+            </div>
+        </article>
+
+
+        <article class="prato destaque">
+            <div class="prato-topo">
+                <h3>Picanha</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 33.–</span>
+            </div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Frango Churrasco</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 23.–</span>
+            </div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Febras de Porco</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 24.–</span>
+            </div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Barriguinhas</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 24.–</span>
+            </div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Grelhada Mista</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 26.–</span>
+            </div>
         </article>
 
     </section>
@@ -769,34 +657,172 @@
     <section id="cervejaria" class="categoria">
 
         <div class="titulo-categoria">
+            <h2>Cervejaria</h2>
+        </div>
 
-            <h2>
-                Cervejaria
-            </h2>
 
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Alheira</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 7.–</span>
+            </div>
+
+            <div class="descricao">
+                Duas por CHF 12.–
+            </div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Chouriço</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 7.–</span>
+            </div>
+
+            <div class="descricao">
+                Duas por CHF 12.–
+            </div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Ovos Rotos</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 18.–</span>
+            </div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Francesinha Porco</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 23.–</span>
+            </div>
+        </article>
+
+
+        <article class="prato destaque">
+            <div class="prato-topo">
+                <h3>Francesinha Vaca</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 26.–</span>
+            </div>
+        </article>
+
+    </section>
+
+
+    <!-- =================================================
+         PEIXES
+         ================================================= -->
+
+    <section id="peixes" class="categoria">
+
+        <div class="titulo-categoria">
+            <h2>Peixes</h2>
         </div>
 
 
         <article class="prato destaque">
-
             <div class="prato-topo">
-
-                <h3>
-                    Francesinha
-                </h3>
-
+                <h3>Mar &amp; Mar</h3>
                 <span class="linha"></span>
-
-                <span class="preco">
-                    CHF
-                </span>
-
+                <span class="preco">CHF 37.–</span>
             </div>
+        </article>
 
-            <span class="etiqueta">
-                ESPECIALIDADE
-            </span>
 
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Gambas Grelhadas</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 35.–</span>
+            </div>
+        </article>
+
+
+        <article class="prato destaque">
+            <div class="prato-topo">
+                <h3>Polvo à Lagareiro</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 33.–</span>
+            </div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Salmão Grelhado</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 28.–</span>
+            </div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Chocos Grelhados</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 28.–</span>
+            </div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Bacalhau à Casa</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 30.–</span>
+            </div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Bacalhau Grelhado</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 30.–</span>
+            </div>
+        </article>
+
+    </section>
+
+
+    <!-- =================================================
+         MENU INFANTIL
+         ================================================= -->
+
+    <section id="infantil" class="categoria">
+
+        <div class="titulo-categoria">
+            <h2>Menu Infantil</h2>
+        </div>
+
+
+        <div class="subcategoria">
+            Kinder
+        </div>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Salsicha</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 12.–</span>
+            </div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Nuggets</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 12.–</span>
+            </div>
         </article>
 
     </section>
@@ -809,68 +835,577 @@
     <section id="sobremesas" class="categoria">
 
         <div class="titulo-categoria">
-
-            <h2>
-                Sobremesas
-            </h2>
-
+            <h2>Sobremesas</h2>
         </div>
 
 
         <article class="prato">
-
             <div class="prato-topo">
-
-                <h3>
-                    Pudim
-                </h3>
-
+                <h3>Sobremesa</h3>
                 <span class="linha"></span>
-
-                <span class="preco">
-                    CHF
-                </span>
-
+                <span class="preco">CHF 6.–</span>
             </div>
 
+            <div class="descricao">
+                Várias opções
+            </div>
+        </article>
+
+    </section>
+
+
+    <!-- =================================================
+         VINHOS
+         ================================================= -->
+
+    <section id="vinhos" class="categoria">
+
+        <div class="titulo-categoria">
+            <h2>Vinhos</h2>
+        </div>
+
+
+        <!-- VINHO TINTO -->
+
+        <div class="subcategoria">
+            Vinho Tinto
+        </div>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Vinho da Casa</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 7.–</span>
+            </div>
+            <div class="descricao">Copo</div>
         </article>
 
 
         <article class="prato">
-
             <div class="prato-topo">
-
-                <h3>
-                    Bolo de bolacha
-                </h3>
-
+                <h3>Vinho da Casa</h3>
                 <span class="linha"></span>
-
-                <span class="preco">
-                    CHF
-                </span>
-
+                <span class="preco">CHF 14.–</span>
             </div>
-
+            <div class="descricao">50cl</div>
         </article>
 
 
         <article class="prato">
-
             <div class="prato-topo">
-
-                <h3>
-                    Mousse de chocolate
-                </h3>
-
+                <h3>Vila Real Reserva</h3>
                 <span class="linha"></span>
+                <span class="preco">CHF 25.–</span>
+            </div>
+            <div class="descricao">Douro · 75cl</div>
+        </article>
 
-                <span class="preco">
-                    CHF
-                </span>
 
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Tapada das Lebres</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 28.–</span>
+            </div>
+            <div class="descricao">Alentejo · 75cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Cancellus Premium</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 30.–</span>
+            </div>
+            <div class="descricao">Douro · 75cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Piano Reserva</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 30.–</span>
+            </div>
+            <div class="descricao">Douro · 75cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Mariana</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 30.–</span>
+            </div>
+            <div class="descricao">75cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Trinca Bolotas</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 30.–</span>
+            </div>
+            <div class="descricao">Alentejo · 75cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Adega de Borba Reserva</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 30.–</span>
+            </div>
+            <div class="descricao">Alentejo · 75cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Bafarela Reserva</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 32.–</span>
+            </div>
+            <div class="descricao">Douro · 75cl</div>
+        </article>
+
+
+        <article class="prato destaque">
+            <div class="prato-topo">
+                <h3>Esporão Reserva</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 35.–</span>
+            </div>
+            <div class="descricao">Alentejo · 75cl</div>
+        </article>
+
+
+        <!-- VINHO ROSÉ -->
+
+        <div class="subcategoria">
+            Vinho Rosé
+        </div>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Mateus</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 25.–</span>
+            </div>
+            <div class="descricao">75cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Loureiro</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 25.–</span>
+            </div>
+            <div class="descricao">Ponte de Lima · 75cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Tapada das Lebres</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 28.–</span>
+            </div>
+            <div class="descricao">75cl</div>
+        </article>
+
+
+        <!-- VINHO VERDE / BRANCO -->
+
+        <div class="subcategoria">
+            Vinho Verde / Branco
+        </div>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Vinho da Casa</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 7.–</span>
+            </div>
+            <div class="descricao">Copo</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Vinho da Casa</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 14.–</span>
+            </div>
+            <div class="descricao">50cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Loureiro</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 25.–</span>
+            </div>
+            <div class="descricao">Ponte de Lima · 75cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Muralhas</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 27.–</span>
+            </div>
+            <div class="descricao">Monção · 75cl</div>
+        </article>
+
+
+        <article class="prato destaque">
+            <div class="prato-topo">
+                <h3>Alvarinho</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 32.–</span>
+            </div>
+            <div class="descricao">Monção · 75cl</div>
+        </article>
+
+
+        <!-- PROSECCO -->
+
+        <div class="subcategoria">
+            Prosecco
+        </div>
+
+
+        <article class="prato destaque">
+            <div class="prato-topo">
+                <h3>Prosecco</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 35.–</span>
+            </div>
+            <div class="descricao">75cl</div>
+        </article>
+
+    </section>
+
+
+    <!-- =================================================
+         BEBIDAS
+         ================================================= -->
+
+    <section id="bebidas" class="categoria">
+
+        <div class="titulo-categoria">
+            <h2>Bebidas</h2>
+        </div>
+
+
+        <!-- CERVEJA -->
+
+        <div class="subcategoria">
+            Cerveja
+        </div>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Imperial</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 3,70</span>
+            </div>
+            <div class="descricao">25cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Sagres Mini</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 3,70</span>
+            </div>
+            <div class="descricao">25cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Super Bock Mini</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 3,70</span>
+            </div>
+            <div class="descricao">25cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Super Bock</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 4.–</span>
+            </div>
+            <div class="descricao">33cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Super Bock Stout</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 4.–</span>
+            </div>
+            <div class="descricao">33cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Super Bock 0.0%</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 4.–</span>
+            </div>
+            <div class="descricao">33cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Heineken</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 4.–</span>
+            </div>
+            <div class="descricao">25cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Desperados</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 6.–</span>
+            </div>
+            <div class="descricao">33cl</div>
+        </article>
+
+
+        <!-- COCKTAILS -->
+
+        <div class="subcategoria">
+            Cocktails &amp; Sangria
+        </div>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Cocktails</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 8,50</span>
             </div>
 
+            <div class="descricao">
+                Aperol Spritz · Hugo Spritz · Mojito · Caipirinha · Caipiroska
+            </div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Sangria</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 22.–</span>
+            </div>
+
+            <div class="descricao">
+                Maracujá · Maçã Verde · Frutos Vermelhos · 1 Litro (100cl)
+            </div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Sangria</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 35.–</span>
+            </div>
+
+            <div class="descricao">
+                Maracujá · Maçã Verde · Frutos Vermelhos · 2 Litros (200cl)
+            </div>
+        </article>
+
+
+        <!-- REFRIGERANTES -->
+
+        <div class="subcategoria">
+            Bebidas Não Alcoólicas / Refrigerantes
+        </div>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Água</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 3,50</span>
+            </div>
+            <div class="descricao">33cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Água</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 10.–</span>
+            </div>
+            <div class="descricao">1,5 Litro</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Água com Gás</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 3,50</span>
+            </div>
+            <div class="descricao">33cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Água com Gás</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 10.–</span>
+            </div>
+            <div class="descricao">1,5 Litro</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Coca-Cola</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 3,70</span>
+            </div>
+            <div class="descricao">33cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Coca-Cola Zero</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 3,70</span>
+            </div>
+            <div class="descricao">33cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Guaraná</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 3,70</span>
+            </div>
+            <div class="descricao">33cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Sprite</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 3,70</span>
+            </div>
+            <div class="descricao">33cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Ice Tea</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 3,70</span>
+            </div>
+            <div class="descricao">33cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Sumol</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 3,70</span>
+            </div>
+            <div class="descricao">33cl</div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Red Bull</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 5.–</span>
+            </div>
+            <div class="descricao">25cl</div>
+        </article>
+
+    </section>
+
+
+    <!-- =================================================
+         CAFETARIA
+         ================================================= -->
+
+    <section id="cafeteria" class="categoria">
+
+        <div class="titulo-categoria">
+            <h2>Cafetaria</h2>
+        </div>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Café</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 4.–</span>
+            </div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Café</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 3,50</span>
+            </div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Expresso Cappuccino</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 4.–</span>
+            </div>
+        </article>
+
+
+        <article class="prato">
+            <div class="prato-topo">
+                <h3>Chá</h3>
+                <span class="linha"></span>
+                <span class="preco">CHF 4.–</span>
+            </div>
+
+            <div class="descricao">
+                Limão · Cidreira · Camomila · Menta · Verde · Preto
+            </div>
         </article>
 
     </section>
