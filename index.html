@@ -1,18 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Menu Yamore Grill - Restaurante Português em Biel/Bienne, Suíça.">
-
-    <title>Yamore Grill | Menu</title>
+    <title>Yamore Grill — Restaurante Português</title>
 
     <style>
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
         }
 
         html {
@@ -20,366 +16,258 @@
         }
 
         body {
+            margin: 0;
             font-family: Arial, Helvetica, sans-serif;
             background: #f5f1e8;
             color: #29241f;
-            line-height: 1.5;
         }
 
-        /* =====================================================
-           CABEÇALHO
-           ===================================================== */
+        /* =========================
+           TOPO
+        ========================== */
 
         .topo {
-            position: relative;
-
             background-image: url("https://amandiocampos54-lgtm.github.io/Yamore/imagens/fundo.jpg");
             background-repeat: repeat;
             background-size: 500px 500px;
-            background-position: center top;
-
-            padding: 20px 15px 22px;
-
+            padding: 8px 15px 10px;
             text-align: center;
-
             border-bottom: 4px solid #b58a45;
-
-            overflow: hidden;
         }
 
         .logo {
-            display: block;
-
-            width: min(390px, 88vw);
-
+            width: min(300px, 72vw);
             height: auto;
-
+            display: block;
             margin: 0 auto;
-
-            opacity: 1;
         }
 
         .subtitulo {
-            color: #ffffff;
-
+            color: white;
             font-size: 13px;
-
             letter-spacing: 3px;
-
             text-transform: uppercase;
-
-            margin-top: 8px;
-
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+            margin-top: 4px;
         }
 
-
-        /* =====================================================
-           CATEGORIAS
-           ===================================================== */
+        /* =========================
+           MENU DE CATEGORIAS
+        ========================== */
 
         .categorias {
             position: sticky;
             top: 0;
             z-index: 100;
-
-            background: rgba(23, 20, 17, 0.98);
-
-            border-bottom: 1px solid #3a332c;
-
+            background: rgba(23, 20, 17, 0.95);
             overflow-x: auto;
             white-space: nowrap;
-
-            scrollbar-width: none;
-        }
-
-        .categorias::-webkit-scrollbar {
-            display: none;
         }
 
         .categorias-inner {
             display: flex;
-
             justify-content: center;
-
             gap: 6px;
-
             padding: 10px 12px;
-
-            min-width: max-content;
         }
 
         .categorias a {
-            color: #eee5d8;
-
+            color: white;
             text-decoration: none;
-
-            padding: 9px 18px;
-
-            border-radius: 20px;
-
             font-size: 13px;
-
-            font-weight: bold;
-
+            padding: 9px 18px;
+            border-radius: 30px;
             transition: 0.2s;
         }
 
         .categorias a:hover {
             background: #b58a45;
-            color: #ffffff;
         }
 
-
-        /* =====================================================
+        /* =========================
            MENU
-           ===================================================== */
+        ========================== */
 
         .menu {
-            width: min(900px, 94%);
-
+            width: 94%;
+            max-width: 900px;
             margin: 0 auto;
-
             padding: 35px 0 50px;
         }
 
         .introducao {
             text-align: center;
-
-            margin-bottom: 35px;
+            margin-bottom: 45px;
         }
 
         .introducao h1 {
-            font-family: Georgia, serif;
-
-            font-size: clamp(30px, 7vw, 46px);
-
-            color: #171411;
-
-            margin-bottom: 8px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 40px;
+            margin: 0 0 10px;
+            color: #29241f;
         }
 
         .introducao p {
-            color: #756d63;
-
+            margin: 0;
+            color: #706960;
             font-size: 15px;
         }
 
-
-        /* =====================================================
-           TÍTULOS DAS CATEGORIAS
-           ===================================================== */
+        /* =========================
+           CATEGORIAS
+        ========================== */
 
         .categoria {
             margin-bottom: 42px;
-
             scroll-margin-top: 70px;
         }
 
         .titulo-categoria {
             display: flex;
-
             align-items: center;
-
-            gap: 15px;
-
-            margin-bottom: 17px;
+            gap: 14px;
+            margin-bottom: 18px;
         }
 
         .titulo-categoria::before,
         .titulo-categoria::after {
             content: "";
-
             height: 1px;
-
-            background: #c9b38c;
-
+            background: #c8b18b;
             flex: 1;
         }
 
         .titulo-categoria h2 {
-            font-family: Georgia, serif;
-
+            font-family: Georgia, "Times New Roman", serif;
             color: #8b642b;
-
             font-size: 25px;
-
-            text-align: center;
-
+            margin: 0;
             white-space: nowrap;
         }
 
-
-        /* =====================================================
+        /* =========================
            PRATOS
-           ===================================================== */
+        ========================== */
 
         .prato {
-            background: #fffdf9;
-
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid #e0d7c9;
             border-radius: 10px;
-
             padding: 17px 18px;
-
             margin-bottom: 10px;
-
-            border: 1px solid #e5ddd1;
-
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
         }
 
         .prato-topo {
             display: flex;
-
             align-items: baseline;
-
             gap: 12px;
         }
 
         .prato h3 {
             font-size: 17px;
-
-            color: #27211b;
-
-            font-weight: 700;
+            margin: 0;
+            font-weight: bold;
         }
 
         .linha {
             flex: 1;
-
             border-bottom: 1px dotted #bdb3a7;
-
-            min-width: 20px;
-
-            position: relative;
-
-            top: -4px;
+            height: 1px;
         }
 
         .preco {
             font-size: 17px;
-
             font-weight: bold;
-
             color: #8b642b;
-
             white-space: nowrap;
         }
 
         .descricao {
-            color: #766f67;
-
             font-size: 13px;
-
-            margin-top: 5px;
-
-            padding-right: 50px;
+            color: #756e66;
+            margin-top: 6px;
         }
+
+        /* =========================
+           ESPECIALIDADES
+        ========================== */
 
         .destaque {
             border: 1px solid #b58a45;
-
-            background: linear-gradient(
-                135deg,
-                #fffdf8,
-                #f4ead7
-            );
+            background: linear-gradient(135deg, #fffdf8, #f4ead7);
         }
 
         .etiqueta {
             display: inline-block;
-
             background: #8b642b;
-
             color: white;
-
             font-size: 10px;
-
             font-weight: bold;
-
             letter-spacing: 1px;
-
             padding: 3px 7px;
-
             border-radius: 4px;
-
             margin-top: 7px;
         }
 
-
-        /* =====================================================
+        /* =========================
            RODAPÉ
-           ===================================================== */
+        ========================== */
 
         footer {
             background: #171411;
-
-            color: #d8d0c5;
-
+            color: white;
             text-align: center;
-
-            padding: 30px 20px;
+            padding: 35px 15px;
         }
 
         footer h3 {
-            color: white;
-
-            font-family: Georgia, serif;
-
+            font-family: Georgia, "Times New Roman", serif;
             font-size: 23px;
-
-            margin-bottom: 12px;
+            margin: 0 0 8px;
         }
 
         footer p {
+            color: #c7c0b8;
             font-size: 13px;
-
-            margin: 5px 0;
+            line-height: 1.6;
+            margin: 4px 0;
         }
 
         .telefone {
             display: inline-block;
-
             margin-top: 15px;
-
-            background: #b58a45;
-
-            color: white;
-
-            text-decoration: none;
-
             padding: 11px 20px;
-
             border-radius: 25px;
-
+            background: #b58a45;
+            color: white;
+            text-decoration: none;
             font-weight: bold;
         }
 
+        .copyright {
+            margin-top: 22px;
+            font-size: 11px;
+            color: #77706a;
+        }
 
-        /* =====================================================
-           TELEMÓVEL
-           ===================================================== */
+        /* =========================
+           MOBILE
+        ========================== */
 
         @media (max-width: 600px) {
 
             .topo {
-                padding: 12px 10px 18px;
-
+                padding: 6px 8px 8px;
                 background-size: 360px 360px;
-                background-position: center top;
             }
 
             .logo {
-                width: min(330px, 94vw);
-
-                height: auto;
+                width: min(250px, 78vw);
             }
 
             .subtitulo {
                 font-size: 10px;
-
                 letter-spacing: 2px;
-
                 margin-top: 5px;
             }
 
@@ -387,24 +275,21 @@
                 justify-content: flex-start;
             }
 
-            .categorias a {
-                font-size: 12px;
-
-                padding: 8px 13px;
-            }
-
             .menu {
                 width: 92%;
-
-                padding-top: 28px;
+                padding: 28px 0 40px;
             }
 
             .introducao {
-                margin-bottom: 28px;
+                margin-bottom: 35px;
             }
 
             .introducao h1 {
                 font-size: 32px;
+            }
+
+            .introducao p {
+                font-size: 13px;
             }
 
             .titulo-categoria h2 {
@@ -415,18 +300,13 @@
                 padding: 15px;
             }
 
-            .prato h3 {
-                font-size: 16px;
-            }
-
+            .prato h3,
             .preco {
                 font-size: 16px;
             }
 
             .descricao {
                 font-size: 12px;
-
-                padding-right: 0;
             }
 
             .linha {
@@ -442,1082 +322,921 @@
 
 <body>
 
-    <!-- =====================================================
-         CABEÇALHO
-         ===================================================== -->
+    <!-- =========================
+         TOPO
+    ========================== -->
 
     <header class="topo">
-
         <img
+            class="logo"
             src="https://amandiocampos54-lgtm.github.io/Yamore/imagens/logo.jpg"
             alt="Yamore Grill"
-            class="logo"
         >
 
         <div class="subtitulo">
-            Restaurante Português · Biel/Bienne
+            Restaurante Português
         </div>
-
     </header>
 
 
-    <!-- =====================================================
-         MENU DE CATEGORIAS
-         ===================================================== -->
+    <!-- =========================
+         CATEGORIAS
+    ========================== -->
 
     <nav class="categorias">
-
         <div class="categorias-inner">
 
-            <a href="#carne">
-                Carne
-            </a>
-
-            <a href="#peixe">
-                Peixe &amp; Marisco
-            </a>
-
-            <a href="#cervejaria">
-                Cervejaria
-            </a>
-
-            <a href="#infantil">
-                Infantil
-            </a>
-
-            <a href="#sobremesas">
-                Sobremesas
-            </a>
-
-            <a href="#vinhos">
-                Vinhos
-            </a>
-
-            <a href="#bebidas">
-                Bebidas
-            </a>
-
-            <a href="#cafeteria">
-                Cafetaria
-            </a>
+            <a href="#carne">Carne</a>
+            <a href="#peixe">Peixe &amp; Marisco</a>
+            <a href="#cervejaria">Cervejaria</a>
+            <a href="#infantil">Infantil</a>
+            <a href="#sobremesas">Sobremesas</a>
+            <a href="#vinhos">Vinhos</a>
+            <a href="#bebidas">Bebidas</a>
+            <a href="#cafeteria">Cafetaria</a>
 
         </div>
-
     </nav>
 
 
-    <!-- =====================================================
-         CONTEÚDO
-         ===================================================== -->
+    <!-- =========================
+         MENU
+    ========================== -->
 
     <main class="menu">
 
         <div class="introducao">
-
-            <h1>
-                O nosso menu
-            </h1>
-
-            <p>
-                Sabores portugueses preparados com tradição.
-            </p>
-
+            <h1>O nosso menu</h1>
+            <p>Sabores portugueses preparados com tradição.</p>
         </div>
 
 
-        <!-- =================================================
+        <!-- =========================
              CARNE
-             ================================================= -->
+        ========================== -->
 
-        <section
-            id="carne"
-            class="categoria"
-        >
+        <section class="categoria" id="carne">
 
             <div class="titulo-categoria">
-
-                <h2>
-                    Carne
-                </h2>
-
+                <h2>Carne</h2>
             </div>
 
 
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Chuletón</h3>
                     <span class="linha"></span>
                     <span class="preco">37.-</span>
                 </div>
+            </div>
 
-            </article>
 
-
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Terra &amp; Mar</h3>
                     <span class="linha"></span>
                     <span class="preco">37.-</span>
                 </div>
+            </div>
 
-            </article>
 
-
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Naco na Pedra</h3>
                     <span class="linha"></span>
                     <span class="preco">37.-</span>
                 </div>
-
-            </article>
+            </div>
 
 
             <!-- ESPECIALIDADE -->
-
-            <article class="prato destaque">
-
+            <div class="prato destaque">
                 <div class="prato-topo">
                     <h3>Espetada</h3>
                     <span class="linha"></span>
                     <span class="preco">37.-</span>
                 </div>
-
-                <span class="etiqueta">
-                    ESPECIALIDADE
-                </span>
-
-            </article>
+                <div>
+                    <span class="etiqueta">ESPECIALIDADE</span>
+                </div>
+            </div>
 
 
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Ribs</h3>
                     <span class="linha"></span>
                     <span class="preco">23.-</span>
                 </div>
-
-            </article>
+            </div>
 
 
             <!-- ESPECIALIDADE -->
-
-            <article class="prato destaque">
-
+            <div class="prato destaque">
                 <div class="prato-topo">
                     <h3>Churrasco de Boi</h3>
                     <span class="linha"></span>
                     <span class="preco">35.-</span>
                 </div>
-
-                <span class="etiqueta">
-                    ESPECIALIDADE
-                </span>
-
-            </article>
+                <div>
+                    <span class="etiqueta">ESPECIALIDADE</span>
+                </div>
+            </div>
 
 
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Bitoque (Vaca)</h3>
                     <span class="linha"></span>
                     <span class="preco">28.-</span>
                 </div>
-
-            </article>
+            </div>
 
 
             <!-- ESPECIALIDADE -->
-
-            <article class="prato destaque">
-
+            <div class="prato destaque">
                 <div class="prato-topo">
                     <h3>Picanha</h3>
                     <span class="linha"></span>
                     <span class="preco">33.-</span>
                 </div>
-
-                <span class="etiqueta">
-                    ESPECIALIDADE
-                </span>
-
-            </article>
+                <div>
+                    <span class="etiqueta">ESPECIALIDADE</span>
+                </div>
+            </div>
 
 
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Frango Churrasco</h3>
                     <span class="linha"></span>
                     <span class="preco">23.-</span>
                 </div>
+            </div>
 
-            </article>
 
-
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Febras de Porco</h3>
                     <span class="linha"></span>
                     <span class="preco">24.-</span>
                 </div>
+            </div>
 
-            </article>
 
-
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Barriguinhas</h3>
                     <span class="linha"></span>
                     <span class="preco">24.-</span>
                 </div>
+            </div>
 
-            </article>
 
-
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Grelhada Mista</h3>
                     <span class="linha"></span>
                     <span class="preco">26.-</span>
                 </div>
-
-            </article>
+            </div>
 
 
             <!-- ESPECIALIDADE -->
-
-            <article class="prato destaque">
-
+            <div class="prato destaque">
                 <div class="prato-topo">
                     <h3>Tomahawk Steak</h3>
                     <span class="linha"></span>
                     <span class="preco">A definir</span>
                 </div>
-
-                <span class="etiqueta">
-                    ESPECIALIDADE
-                </span>
-
-            </article>
+                <div>
+                    <span class="etiqueta">ESPECIALIDADE</span>
+                </div>
+            </div>
 
         </section>
 
 
-        <!-- =================================================
+        <!-- =========================
              CERVEJARIA
-             ================================================= -->
+        ========================== -->
 
-        <section
-            id="cervejaria"
-            class="categoria"
-        >
+        <section class="categoria" id="cervejaria">
 
             <div class="titulo-categoria">
-
-                <h2>
-                    Cervejaria
-                </h2>
-
+                <h2>Cervejaria</h2>
             </div>
 
 
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Alheira</h3>
                     <span class="linha"></span>
                     <span class="preco">7.-</span>
                 </div>
-
-                <div class="descricao">
-                    Duas por 12.-
-                </div>
-
-            </article>
+                <div class="descricao">Duas por 12.-</div>
+            </div>
 
 
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Chouriça</h3>
                     <span class="linha"></span>
                     <span class="preco">7.-</span>
                 </div>
-
-                <div class="descricao">
-                    Duas por 12.-
-                </div>
-
-            </article>
+                <div class="descricao">Duas por 12.-</div>
+            </div>
 
 
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Ovos Rotos</h3>
                     <span class="linha"></span>
                     <span class="preco">18.-</span>
                 </div>
+            </div>
 
-            </article>
 
-
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Francesinha Porco</h3>
                     <span class="linha"></span>
                     <span class="preco">23.-</span>
                 </div>
+            </div>
 
-            </article>
 
-
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Francesinha Vaca</h3>
                     <span class="linha"></span>
                     <span class="preco">26.-</span>
                 </div>
-
-            </article>
+            </div>
 
         </section>
 
 
-        <!-- =================================================
+        <!-- =========================
              PEIXE & MARISCO
-             ================================================= -->
+        ========================== -->
 
-        <section
-            id="peixe"
-            class="categoria"
-        >
+        <section class="categoria" id="peixe">
 
             <div class="titulo-categoria">
-
-                <h2>
-                    Peixe &amp; Marisco
-                </h2>
-
+                <h2>Peixe &amp; Marisco</h2>
             </div>
 
 
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Mar &amp; Mar</h3>
                     <span class="linha"></span>
                     <span class="preco">37.-</span>
                 </div>
+            </div>
 
-            </article>
 
-
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Gambas Grelhadas</h3>
                     <span class="linha"></span>
                     <span class="preco">35.-</span>
                 </div>
+            </div>
 
-            </article>
 
-
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Polvo à Lagareiro</h3>
                     <span class="linha"></span>
                     <span class="preco">33.-</span>
                 </div>
+            </div>
 
-            </article>
 
-
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Salmão Grelhado</h3>
                     <span class="linha"></span>
                     <span class="preco">28.-</span>
                 </div>
+            </div>
 
-            </article>
 
-
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Chocos Grelhados</h3>
                     <span class="linha"></span>
                     <span class="preco">28.-</span>
                 </div>
-
-            </article>
+            </div>
 
 
             <!-- ESPECIALIDADE -->
-
-            <article class="prato destaque">
-
+            <div class="prato destaque">
                 <div class="prato-topo">
                     <h3>Bacalhau à Casa</h3>
                     <span class="linha"></span>
                     <span class="preco">30.-</span>
                 </div>
-
-                <span class="etiqueta">
-                    ESPECIALIDADE
-                </span>
-
-            </article>
+                <div>
+                    <span class="etiqueta">ESPECIALIDADE</span>
+                </div>
+            </div>
 
 
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Bacalhau Grelhado</h3>
                     <span class="linha"></span>
                     <span class="preco">30.-</span>
                 </div>
-
-            </article>
+            </div>
 
         </section>
 
 
-        <!-- =================================================
+        <!-- =========================
              MENU INFANTIL
-             ================================================= -->
+        ========================== -->
 
-        <section
-            id="infantil"
-            class="categoria"
-        >
+        <section class="categoria" id="infantil">
 
             <div class="titulo-categoria">
-
-                <h2>
-                    Menu Infantil
-                </h2>
-
+                <h2>Menu Infantil</h2>
             </div>
 
 
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Salsicha</h3>
                     <span class="linha"></span>
                     <span class="preco">12.-</span>
                 </div>
+            </div>
 
-            </article>
 
-
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Nuggets</h3>
                     <span class="linha"></span>
                     <span class="preco">12.-</span>
                 </div>
-
-            </article>
+            </div>
 
         </section>
 
 
-        <!-- =================================================
+        <!-- =========================
              SOBREMESAS
-             ================================================= -->
+        ========================== -->
 
-        <section
-            id="sobremesas"
-            class="categoria"
-        >
+        <section class="categoria" id="sobremesas">
 
             <div class="titulo-categoria">
-
-                <h2>
-                    Sobremesas
-                </h2>
-
+                <h2>Sobremesas</h2>
             </div>
 
 
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Sobremesa</h3>
                     <span class="linha"></span>
                     <span class="preco">6.-</span>
                 </div>
-
-                <div class="descricao">
-                    Várias opções
-                </div>
-
-            </article>
+                <div class="descricao">Várias opções</div>
+            </div>
 
         </section>
 
 
-        <!-- =================================================
+        <!-- =========================
              VINHOS
-             ================================================= -->
+        ========================== -->
 
-        <section
-            id="vinhos"
-            class="categoria"
-        >
+        <section class="categoria" id="vinhos">
 
             <div class="titulo-categoria">
-
-                <h2>
-                    Vinhos
-                </h2>
-
+                <h2>Vinho Tinto</h2>
             </div>
 
 
-            <h3 style="font-family:Georgia,serif; color:#8b642b; margin:20px 0 12px;">
-                Vinho Tinto
-            </h3>
-
-
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Vinho da Casa (Copo)</h3>
                     <span class="linha"></span>
                     <span class="preco">7.-</span>
                 </div>
-            </article>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Vinho da Casa (50cl)</h3>
                     <span class="linha"></span>
                     <span class="preco">14.-</span>
                 </div>
-            </article>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Vila Real Reserva (Douro) 75cl</h3>
                     <span class="linha"></span>
                     <span class="preco">25.-</span>
                 </div>
-            </article>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Tapada das Lebres (Alentejo) 75cl</h3>
                     <span class="linha"></span>
                     <span class="preco">28.-</span>
                 </div>
-            </article>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Cancellus Premium (Douro) 75cl</h3>
                     <span class="linha"></span>
                     <span class="preco">30.-</span>
                 </div>
-            </article>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Piano Reserva (Douro) 75cl</h3>
                     <span class="linha"></span>
                     <span class="preco">30.-</span>
                 </div>
-            </article>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Mariana 75cl</h3>
                     <span class="linha"></span>
                     <span class="preco">30.-</span>
                 </div>
-            </article>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Trinca Bolotas (Alentejo) 75cl</h3>
                     <span class="linha"></span>
                     <span class="preco">30.-</span>
                 </div>
-            </article>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Adega de Borba Reserva (Alentejo) 75cl</h3>
                     <span class="linha"></span>
                     <span class="preco">30.-</span>
                 </div>
-            </article>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Bafarela Reserva (Douro) 75cl</h3>
                     <span class="linha"></span>
                     <span class="preco">32.-</span>
                 </div>
-            </article>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Esporão Reserva (Alentejo) 75cl</h3>
                     <span class="linha"></span>
                     <span class="preco">35.-</span>
                 </div>
-            </article>
+            </div>
 
 
-            <h3 style="font-family:Georgia,serif; color:#8b642b; margin:20px 0 12px;">
-                Vinho Rosé
-            </h3>
+            <div class="titulo-categoria" style="margin-top:35px;">
+                <h2>Vinho Rosé</h2>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Mateus 75cl</h3>
                     <span class="linha"></span>
                     <span class="preco">25.-</span>
                 </div>
-            </article>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Loureiro (Ponte de Lima) 75cl</h3>
                     <span class="linha"></span>
                     <span class="preco">25.-</span>
                 </div>
-            </article>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Tapada das Lebres 75cl</h3>
                     <span class="linha"></span>
                     <span class="preco">28.-</span>
                 </div>
-            </article>
+            </div>
 
 
-            <h3 style="font-family:Georgia,serif; color:#8b642b; margin:20px 0 12px;">
-                Vinho Verde / Branco
-            </h3>
+            <div class="titulo-categoria" style="margin-top:35px;">
+                <h2>Vinho Verde / Branco</h2>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Vinho da Casa (Copo)</h3>
                     <span class="linha"></span>
                     <span class="preco">7.-</span>
                 </div>
-            </article>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Vinho da Casa (50cl)</h3>
                     <span class="linha"></span>
                     <span class="preco">14.-</span>
                 </div>
-            </article>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Loureiro (Ponte de Lima) 75cl</h3>
                     <span class="linha"></span>
                     <span class="preco">25.-</span>
                 </div>
-            </article>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Muralhas (Monção) 75cl</h3>
                     <span class="linha"></span>
                     <span class="preco">27.-</span>
                 </div>
-            </article>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Alvarinho (Monção) 75cl</h3>
                     <span class="linha"></span>
                     <span class="preco">32.-</span>
                 </div>
-            </article>
+            </div>
 
 
-            <h3 style="font-family:Georgia,serif; color:#8b642b; margin:20px 0 12px;">
-                Prosecco
-            </h3>
+            <div class="titulo-categoria" style="margin-top:35px;">
+                <h2>Prosecco</h2>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Prosecco 75cl</h3>
                     <span class="linha"></span>
                     <span class="preco">35.-</span>
                 </div>
-            </article>
+            </div>
 
         </section>
 
 
-        <!-- =================================================
+        <!-- =========================
              BEBIDAS
-             ================================================= -->
+        ========================== -->
 
-        <section
-            id="bebidas"
-            class="categoria"
-        >
+        <section class="categoria" id="bebidas">
 
             <div class="titulo-categoria">
-
-                <h2>
-                    Bebidas
-                </h2>
-
+                <h2>Cerveja</h2>
             </div>
 
 
-            <h3 style="font-family:Georgia,serif; color:#8b642b; margin:20px 0 12px;">
-                Cerveja
-            </h3>
-
-
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Imperial 25cl</h3>
                     <span class="linha"></span>
                     <span class="preco">3,7.-</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="prato">
+
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Sagres Mini 25cl</h3>
                     <span class="linha"></span>
                     <span class="preco">3,7.-</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="prato">
+
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Super Bock Mini 25cl</h3>
                     <span class="linha"></span>
                     <span class="preco">3,7.-</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="prato">
+
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Super Bock 33cl</h3>
                     <span class="linha"></span>
                     <span class="preco">4.-</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="prato">
+
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Super Bock Stout 33cl</h3>
                     <span class="linha"></span>
                     <span class="preco">4.-</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="prato">
+
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Super Bock 0.0% 33cl</h3>
                     <span class="linha"></span>
                     <span class="preco">4.-</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="prato">
+
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Heineken 25cl</h3>
                     <span class="linha"></span>
                     <span class="preco">4.-</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="prato">
+
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Desperados 33cl</h3>
                     <span class="linha"></span>
                     <span class="preco">6.-</span>
                 </div>
-            </article>
+            </div>
 
 
-            <h3 style="font-family:Georgia,serif; color:#8b642b; margin:20px 0 12px;">
-                Cocktails &amp; Sangria
-            </h3>
+            <div class="titulo-categoria" style="margin-top:35px;">
+                <h2>Cocktails &amp; Sangria</h2>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Aperol Spritz</h3>
                     <span class="linha"></span>
                     <span class="preco">8,5.-</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="prato">
+
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Hugo Spritz</h3>
                     <span class="linha"></span>
                     <span class="preco">8,5.-</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="prato">
+
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Mojito</h3>
                     <span class="linha"></span>
                     <span class="preco">8,5.-</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="prato">
+
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Caipirinha</h3>
                     <span class="linha"></span>
                     <span class="preco">8,5.-</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="prato">
+
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Caipiroska</h3>
                     <span class="linha"></span>
                     <span class="preco">8,5.-</span>
                 </div>
-            </article>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
-                    <h3>Sangria de Maracujá</h3>
+                    <h3>Sangria Maracujá</h3>
                     <span class="linha"></span>
                     <span class="preco">22.-</span>
                 </div>
-                <div class="descricao">1 L (100cl)</div>
-            </article>
+                <div class="descricao">1 Litro (100cl)</div>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
-                    <h3>Sangria de Maçã Verde</h3>
+                    <h3>Sangria Maçã Verde</h3>
                     <span class="linha"></span>
                     <span class="preco">22.-</span>
                 </div>
-                <div class="descricao">1 L (100cl)</div>
-            </article>
+                <div class="descricao">1 Litro (100cl)</div>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
-                    <h3>Sangria de Frutos Vermelhos</h3>
+                    <h3>Sangria Frutos Vermelhos</h3>
                     <span class="linha"></span>
                     <span class="preco">22.-</span>
                 </div>
-                <div class="descricao">1 L (100cl)</div>
-            </article>
+                <div class="descricao">1 Litro (100cl)</div>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Sangria</h3>
                     <span class="linha"></span>
                     <span class="preco">35.-</span>
                 </div>
-                <div class="descricao">2 L (200cl)</div>
-            </article>
+                <div class="descricao">2 Litros (200cl)</div>
+            </div>
 
 
-            <h3 style="font-family:Georgia,serif; color:#8b642b; margin:20px 0 12px;">
-                Bebidas Não Alcoólicas / Refrigerantes
-            </h3>
+            <div class="titulo-categoria" style="margin-top:35px;">
+                <h2>Refrigerantes</h2>
+            </div>
 
 
-            <article class="prato">
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Água 33cl</h3>
                     <span class="linha"></span>
                     <span class="preco">3,5.-</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="prato">
+
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Água 1,5 Litro</h3>
                     <span class="linha"></span>
                     <span class="preco">10.-</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="prato">
+
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Água c/ Gás 33cl</h3>
                     <span class="linha"></span>
                     <span class="preco">3,5.-</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="prato">
+
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Água c/ Gás 1,5 Litro</h3>
                     <span class="linha"></span>
                     <span class="preco">10.-</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="prato">
+
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Coca-Cola 33cl</h3>
                     <span class="linha"></span>
                     <span class="preco">3,7.-</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="prato">
+
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Coca-Cola Zero 33cl</h3>
                     <span class="linha"></span>
                     <span class="preco">3,7.-</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="prato">
+
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Guaraná 33cl</h3>
                     <span class="linha"></span>
                     <span class="preco">3,7.-</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="prato">
+
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Sprite 33cl</h3>
                     <span class="linha"></span>
                     <span class="preco">3,7.-</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="prato">
+
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Ice Tea 33cl</h3>
                     <span class="linha"></span>
                     <span class="preco">3,7.-</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="prato">
+
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Sumol 33cl</h3>
                     <span class="linha"></span>
                     <span class="preco">3,7.-</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="prato">
+
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Red Bull 25cl</h3>
                     <span class="linha"></span>
                     <span class="preco">5.-</span>
                 </div>
-            </article>
+            </div>
 
         </section>
 
 
-        <!-- =================================================
+        <!-- =========================
              CAFETARIA
-             ================================================= -->
+        ========================== -->
 
-        <section
-            id="cafeteria"
-            class="categoria"
-        >
+        <section class="categoria" id="cafeteria">
 
             <div class="titulo-categoria">
-
-                <h2>
-                    Cafetaria
-                </h2>
-
+                <h2>Cafetaria</h2>
             </div>
 
 
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Café</h3>
                     <span class="linha"></span>
                     <span class="preco">4.-</span>
                 </div>
+            </div>
 
-            </article>
 
-
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Cafe</h3>
                     <span class="linha"></span>
                     <span class="preco">3,5.-</span>
                 </div>
+            </div>
 
-            </article>
 
-
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Expresso Capuccino</h3>
                     <span class="linha"></span>
                     <span class="preco">4.-</span>
                 </div>
+            </div>
 
-            </article>
 
-
-            <article class="prato">
-
+            <div class="prato">
                 <div class="prato-topo">
                     <h3>Chá</h3>
                     <span class="linha"></span>
@@ -1527,46 +1246,38 @@
                 <div class="descricao">
                     Limão, Cidreira, Camomila, Menta, Verde, Preto
                 </div>
-
-            </article>
+            </div>
 
         </section>
 
     </main>
 
 
-    <!-- =====================================================
+    <!-- =========================
          RODAPÉ
-         ===================================================== -->
+    ========================== -->
 
     <footer>
 
-        <h3>
-            Yamore Grill
-        </h3>
+        <h3>Yamore Grill</h3>
+
+        <p>Restaurante Português</p>
 
         <p>
-            Restaurante Português
-        </p>
-
-        <p>
-            Neumarkstrasse 52 · 2503 Biel/Bienne
-        </p>
-
-        <p>
+            Neumarkstrasse 52 · 2503 Biel/Bienne<br>
             Suíça
         </p>
 
         <a
-            href="tel:+41782556320"
             class="telefone"
+            href="tel:+41782556320"
         >
-            📞 +41 78 255 63 20
+            +41 78 255 63 20
         </a>
 
-        <p style="margin-top:20px; color:#777;">
+        <div class="copyright">
             © 2026 Yamore Grill
-        </p>
+        </div>
 
     </footer>
 
