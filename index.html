@@ -1,118 +1,738 @@
+```html
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yamore Grill - Restaurante Português em Biel, Suíça.">
-    <title>Yamore Grill | Restaurante Português em Biel</title>
-    <link rel="stylesheet" href="style.css">
+
+    <meta name="description" content="Menu Yamore Grill - Restaurante Português em Biel/Bienne, Suíça.">
+
+    <title>Yamore Grill | Menu</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f1e8;
+            color: #29241f;
+            line-height: 1.5;
+        }
+
+        /* =========================
+           TOPO / LOGO
+        ========================= */
+
+        .topo {
+            background: #171411;
+            padding: 28px 20px 24px;
+            text-align: center;
+            border-bottom: 4px solid #b58a45;
+        }
+
+        .logo {
+            display: block;
+            width: min(360px, 85vw);
+            max-height: 180px;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+
+        .subtitulo {
+            color: #d8c29a;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 12px;
+        }
+
+        /* =========================
+           MENU DE CATEGORIAS
+        ========================= */
+
+        .categorias {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(23, 20, 17, 0.97);
+            border-bottom: 1px solid #3a332c;
+            overflow-x: auto;
+            white-space: nowrap;
+            scrollbar-width: none;
+        }
+
+        .categorias::-webkit-scrollbar {
+            display: none;
+        }
+
+        .categorias-inner {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            padding: 10px 12px;
+            min-width: max-content;
+        }
+
+        .categorias a {
+            color: #eee5d8;
+            text-decoration: none;
+            padding: 9px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .categorias a:hover {
+            background: #b58a45;
+            color: white;
+        }
+
+        /* =========================
+           CONTEÚDO
+        ========================= */
+
+        .menu {
+            width: min(900px, 94%);
+            margin: 0 auto;
+            padding: 35px 0 50px;
+        }
+
+        .introducao {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .introducao h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(30px, 7vw, 46px);
+            color: #171411;
+            margin-bottom: 8px;
+        }
+
+        .introducao p {
+            color: #756d63;
+            font-size: 15px;
+        }
+
+        /* =========================
+           CATEGORIAS
+        ========================= */
+
+        .categoria {
+            margin-bottom: 42px;
+            scroll-margin-top: 70px;
+        }
+
+        .titulo-categoria {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 17px;
+        }
+
+        .titulo-categoria::before,
+        .titulo-categoria::after {
+            content: "";
+            height: 1px;
+            background: #c9b38c;
+            flex: 1;
+        }
+
+        .titulo-categoria h2 {
+            font-family: Georgia, serif;
+            color: #8b642b;
+            font-size: 25px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        /* =========================
+           PRATOS
+        ========================= */
+
+        .prato {
+            background: #fffdf9;
+            border-radius: 10px;
+            padding: 17px 18px;
+            margin-bottom: 10px;
+            border: 1px solid #e5ddd1;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .prato-topo {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+        }
+
+        .prato h3 {
+            font-size: 17px;
+            color: #27211b;
+            font-weight: 700;
+        }
+
+        .linha {
+            flex: 1;
+            border-bottom: 1px dotted #bdb3a7;
+            min-width: 20px;
+            position: relative;
+            top: -4px;
+        }
+
+        .preco {
+            font-size: 17px;
+            font-weight: bold;
+            color: #8b642b;
+            white-space: nowrap;
+        }
+
+        .descricao {
+            color: #766f67;
+            font-size: 13px;
+            margin-top: 5px;
+            padding-right: 50px;
+        }
+
+        /* =========================
+           DESTAQUE
+        ========================= */
+
+        .destaque {
+            border: 1px solid #b58a45;
+            background: linear-gradient(
+                135deg,
+                #fffdf8,
+                #f4ead7
+            );
+        }
+
+        .etiqueta {
+            display: inline-block;
+            background: #8b642b;
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            padding: 3px 7px;
+            border-radius: 4px;
+            margin-top: 7px;
+        }
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        footer {
+            background: #171411;
+            color: #d8d0c5;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer h3 {
+            color: white;
+            font-family: Georgia, serif;
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            font-size: 13px;
+            margin: 5px 0;
+        }
+
+        .telefone {
+            display: inline-block;
+            margin-top: 15px;
+            background: #b58a45;
+            color: white;
+            text-decoration: none;
+            padding: 11px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .topo {
+                padding: 20px 15px 18px;
+            }
+
+            .logo {
+                width: min(300px, 90vw);
+                max-height: 140px;
+            }
+
+            .subtitulo {
+                font-size: 10px;
+                letter-spacing: 2px;
+            }
+
+            .categorias-inner {
+                justify-content: flex-start;
+            }
+
+            .categorias a {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+
+            .menu {
+                width: 92%;
+                padding-top: 28px;
+            }
+
+            .introducao {
+                margin-bottom: 28px;
+            }
+
+            .introducao h1 {
+                font-size: 32px;
+            }
+
+            .titulo-categoria h2 {
+                font-size: 21px;
+            }
+
+            .prato {
+                padding: 15px;
+            }
+
+            .prato h3 {
+                font-size: 16px;
+            }
+
+            .preco {
+                font-size: 16px;
+            }
+
+            .descricao {
+                font-size: 12px;
+                padding-right: 0;
+            }
+
+            .linha {
+                display: none;
+            }
+
+            .prato-topo {
+                justify-content: space-between;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-    <header class="cabecalho">
-        <a href="#" class="marca">YAMORE <span>Grill</span></a>
+    <!-- =========================
+         LOGO
+    ========================== -->
 
-        <nav class="navegacao">
-            <a href="#inicio">Início</a>
-            <a href="#sobre">Sobre nós</a>
-            <a href="#especialidades">Especialidades</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
+    <header class="topo">
+        <img
+            src="imagens/logo.jpg"
+            alt="Yamore Grill"
+            class="logo"
+        >
 
-        <a href="#contacto" class="botao-reserva">Reservar mesa</a>
+        <div class="subtitulo">
+            Restaurante Português · Biel/Bienne
+        </div>
     </header>
 
-    <main>
-        <section id="inicio" class="hero">
-            <div class="hero-conteudo">
-                <p class="etiqueta">RESTAURANTE PORTUGUÊS</p>
-                <h1>Sabores de Portugal<br><span>em Biel</span></h1>
-                <p class="hero-texto">
-                    Uma mesa portuguesa, sabores autênticos e um ambiente
-                    onde se sente em casa.
-                </p>
 
-                <div class="hero-botoes">
-                    <a href="#especialidades" class="botao-principal">Descobrir a nossa cozinha</a>
-                    <a href="#contacto" class="botao-secundario">Contactar</a>
+    <!-- =========================
+         CATEGORIAS
+    ========================== -->
+
+    <nav class="categorias">
+        <div class="categorias-inner">
+
+            <a href="#entradas">Entradas</a>
+            <a href="#grelhados">Grelhados</a>
+            <a href="#peixe">Peixe</a>
+            <a href="#pratos">Pratos</a>
+            <a href="#acompanhamentos">Acompanhamentos</a>
+            <a href="#sobremesas">Sobremesas</a>
+            <a href="#bebidas">Bebidas</a>
+
+        </div>
+    </nav>
+
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <main class="menu">
+
+        <div class="introducao">
+            <h1>O nosso menu</h1>
+            <p>Sabores portugueses preparados com tradição.</p>
+        </div>
+
+
+        <!-- =========================
+             ENTRADAS
+        ========================== -->
+
+        <section id="entradas" class="categoria">
+
+            <div class="titulo-categoria">
+                <h2>Entradas</h2>
+            </div>
+
+            <article class="prato">
+                <div class="prato-topo">
+                    <h3>Pão de alho</h3>
+                    <span class="linha"></span>
+                    <span class="preco">4.00 CHF</span>
                 </div>
-            </div>
-        </section>
-
-        <section id="sobre" class="sobre">
-            <div class="sobre-texto">
-                <p class="etiqueta escuro">BEM-VINDOS</p>
-                <h2>O sabor de Portugal à sua mesa</h2>
-                <p>
-                    No Yamore Grill queremos trazer para Biel o melhor da
-                    gastronomia portuguesa: receitas tradicionais, bons
-                    ingredientes e aquele ambiente acolhedor que nos faz
-                    lembrar Portugal.
+                <p class="descricao">
+                    Pão de alho preparado na casa.
                 </p>
-                <p>
-                    Aqui, cada refeição é preparada com gosto e servida com
-                    a nossa melhor hospitalidade.
+            </article>
+
+            <article class="prato">
+                <div class="prato-topo">
+                    <h3>Chouriço assado</h3>
+                    <span class="linha"></span>
+                    <span class="preco">8.00 CHF</span>
+                </div>
+            </article>
+
+            <article class="prato">
+                <div class="prato-topo">
+                    <h3>Camarão ao alho</h3>
+                    <span class="linha"></span>
+                    <span class="preco">12.00 CHF</span>
+                </div>
+            </article>
+
+        </section>
+
+
+        <!-- =========================
+             GRELHADOS
+        ========================== -->
+
+        <section id="grelhados" class="categoria">
+
+            <div class="titulo-categoria">
+                <h2>Grelhados</h2>
+            </div>
+
+            <article class="prato destaque">
+                <div class="prato-topo">
+                    <h3>Bife à Portuguesa</h3>
+                    <span class="linha"></span>
+                    <span class="preco">24.00 CHF</span>
+                </div>
+
+                <p class="descricao">
+                    Bife grelhado servido ao estilo tradicional português.
                 </p>
-            </div>
 
-            <div class="sobre-destaque">
-                <span>🇵🇹</span>
-                <h3>Tradição</h3>
-                <p>Sabores portugueses com alma e autenticidade.</p>
-            </div>
-        </section>
+                <span class="etiqueta">ESPECIALIDADE</span>
+            </article>
 
-        <section id="especialidades" class="especialidades">
-            <div class="titulo-seccao">
-                <p class="etiqueta">A NOSSA COZINHA</p>
-                <h2>Especialidades portuguesas</h2>
-                <p>Uma seleção de sabores para descobrir e partilhar.</p>
-            </div>
+            <article class="prato">
+                <div class="prato-topo">
+                    <h3>Entrecôte grelhado</h3>
+                    <span class="linha"></span>
+                    <span class="preco">29.00 CHF</span>
+                </div>
+            </article>
 
-            <div class="cartoes">
-                <article class="cartao">
-                    <div class="icone">🐟</div>
-                    <h3>Bacalhau</h3>
-                    <p>Clássicos portugueses preparados com sabor e tradição.</p>
-                </article>
+            <article class="prato">
+                <div class="prato-topo">
+                    <h3>Frango grelhado</h3>
+                    <span class="linha"></span>
+                    <span class="preco">18.00 CHF</span>
+                </div>
 
-                <article class="cartao">
-                    <div class="icone">🥩</div>
-                    <h3>Grelhados</h3>
-                    <p>Carnes grelhadas no ponto, com aquele sabor irresistível.</p>
-                </article>
-
-                <article class="cartao">
-                    <div class="icone">🍮</div>
-                    <h3>Doces portugueses</h3>
-                    <p>Para terminar a refeição com um verdadeiro sabor de Portugal.</p>
-                </article>
-            </div>
-        </section>
-
-        <section id="contacto" class="contacto">
-            <div>
-                <p class="etiqueta">VISITE-NOS</p>
-                <h2>Esperamos por si</h2>
-                <p>
-                    Venha conhecer o Yamore Grill e desfrutar de uma refeição
-                    com sabor português em Biel.
+                <p class="descricao">
+                    Frango grelhado acompanhado de batata e salada.
                 </p>
+            </article>
+
+        </section>
+
+
+        <!-- =========================
+             PEIXE
+        ========================== -->
+
+        <section id="peixe" class="categoria">
+
+            <div class="titulo-categoria">
+                <h2>Peixe</h2>
             </div>
 
-            <div class="contacto-info">
-                <p><strong>📍 Morada</strong><br>Neumarkstrasse 52, 2503 Biel/Bienne</p>
-                <p><strong>📞 Telefone</strong><br>+41 78 255 63 20</p>
-                <p><strong>🕐 Horário</strong><br>A definir</p>
-            </div>
+            <article class="prato destaque">
+
+                <div class="prato-topo">
+                    <h3>Bacalhau à Brás</h3>
+                    <span class="linha"></span>
+                    <span class="preco">22.00 CHF</span>
+                </div>
+
+                <p class="descricao">
+                    Bacalhau desfiado, batata, ovo e azeitonas.
+                </p>
+
+                <span class="etiqueta">TRADICIONAL</span>
+
+            </article>
+
+            <article class="prato">
+
+                <div class="prato-topo">
+                    <h3>Bacalhau com natas</h3>
+                    <span class="linha"></span>
+                    <span class="preco">22.00 CHF</span>
+                </div>
+
+            </article>
+
+            <article class="prato">
+
+                <div class="prato-topo">
+                    <h3>Peixe grelhado</h3>
+                    <span class="linha"></span>
+                    <span class="preco">23.00 CHF</span>
+                </div>
+
+            </article>
+
         </section>
+
+
+        <!-- =========================
+             PRATOS
+        ========================== -->
+
+        <section id="pratos" class="categoria">
+
+            <div class="titulo-categoria">
+                <h2>Pratos Portugueses</h2>
+            </div>
+
+            <article class="prato">
+
+                <div class="prato-topo">
+                    <h3>Francesinha</h3>
+                    <span class="linha"></span>
+                    <span class="preco">22.00 CHF</span>
+                </div>
+
+                <p class="descricao">
+                    Receita tradicional com molho especial.
+                </p>
+
+            </article>
+
+            <article class="prato">
+
+                <div class="prato-topo">
+                    <h3>Arroz de pato</h3>
+                    <span class="linha"></span>
+                    <span class="preco">21.00 CHF</span>
+                </div>
+
+            </article>
+
+            <article class="prato">
+
+                <div class="prato-topo">
+                    <h3>Carne de porco à Alentejana</h3>
+                    <span class="linha"></span>
+                    <span class="preco">23.00 CHF</span>
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =========================
+             ACOMPANHAMENTOS
+        ========================== -->
+
+        <section id="acompanhamentos" class="categoria">
+
+            <div class="titulo-categoria">
+                <h2>Acompanhamentos</h2>
+            </div>
+
+            <article class="prato">
+
+                <div class="prato-topo">
+                    <h3>Batata frita</h3>
+                    <span class="linha"></span>
+                    <span class="preco">5.00 CHF</span>
+                </div>
+
+            </article>
+
+            <article class="prato">
+
+                <div class="prato-topo">
+                    <h3>Arroz</h3>
+                    <span class="linha"></span>
+                    <span class="preco">4.00 CHF</span>
+                </div>
+
+            </article>
+
+            <article class="prato">
+
+                <div class="prato-topo">
+                    <h3>Salada mista</h3>
+                    <span class="linha"></span>
+                    <span class="preco">5.00 CHF</span>
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =========================
+             SOBREMESAS
+        ========================== -->
+
+        <section id="sobremesas" class="categoria">
+
+            <div class="titulo-categoria">
+                <h2>Sobremesas</h2>
+            </div>
+
+            <article class="prato">
+
+                <div class="prato-topo">
+                    <h3>Pastel de nata</h3>
+                    <span class="linha"></span>
+                    <span class="preco">3.50 CHF</span>
+                </div>
+
+            </article>
+
+            <article class="prato">
+
+                <div class="prato-topo">
+                    <h3>Pudim caseiro</h3>
+                    <span class="linha"></span>
+                    <span class="preco">6.00 CHF</span>
+                </div>
+
+            </article>
+
+            <article class="prato">
+
+                <div class="prato-topo">
+                    <h3>Sobremesa do dia</h3>
+                    <span class="linha"></span>
+                    <span class="preco">6.00 CHF</span>
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =========================
+             BEBIDAS
+        ========================== -->
+
+        <section id="bebidas" class="categoria">
+
+            <div class="titulo-categoria">
+                <h2>Bebidas</h2>
+            </div>
+
+            <article class="prato">
+
+                <div class="prato-topo">
+                    <h3>Água</h3>
+                    <span class="linha"></span>
+                    <span class="preco">4.00 CHF</span>
+                </div>
+
+            </article>
+
+            <article class="prato">
+
+                <div class="prato-topo">
+                    <h3>Refrigerante</h3>
+                    <span class="linha"></span>
+                    <span class="preco">4.00 CHF</span>
+                </div>
+
+            </article>
+
+            <article class="prato">
+
+                <div class="prato-topo">
+                    <h3>Cerveja</h3>
+                    <span class="linha"></span>
+                    <span class="preco">5.00 CHF</span>
+                </div>
+
+            </article>
+
+            <article class="prato">
+
+                <div class="prato-topo">
+                    <h3>Vinho da casa</h3>
+                    <span class="linha"></span>
+                    <span class="preco">5.00 CHF</span>
+                </div>
+
+            </article>
+
+        </section>
+
     </main>
 
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
     <footer>
-        <div class="marca">YAMORE <span>Grill</span></div>
-        <p>© 2026 Yamore Grill · Restaurante Português em Biel</p>
+
+        <h3>Yamore Grill</h3>
+
+        <p>Restaurante Português</p>
+
+        <p>Neumarkstrasse 52 · 2503 Biel/Bienne</p>
+
+        <p>Suíça</p>
+
+        <a href="tel:+41782556320" class="telefone">
+            📞 +41 78 255 63 20
+        </a>
+
+        <p style="margin-top:20px; color:#777;">
+            © 2026 Yamore Grill
+        </p>
+
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
+```
